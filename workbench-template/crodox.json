@@ -1,0 +1,122 @@
+{
+  "crodoxText": "<~\"FROM\".ts~>\n\n    <*comment*> <| // -->> \\n <||> /* -->> */ |> <*>\n\n    <*{}*> { <---> } <*>\n    <*[]*> [ <---> ] <*>\n    <*()*> ( <---> ) <*>\n\n    <:expression:> value.match ( -->> ) <:>\n\n    <:paramMap:>\n        route.snapshot.paramMap.get ( <| ' <<param>> ' <||> \" <<param>> \" |> )\n    <:>\n\n    <:import:>\n        import <| <<name:up>> <||> <<name2:up>> <||> { <? <| <<name:up>> <||> <<name2:up>> |> <| , <||> |> ?> } <||> * as <| <<name:up>> <||> <<name2:up>> |> |> from <<\"FROM\">> <| ; <||> \\n |>\n    <:>\n\n    <:refference:>\n       this. <<![service|service_call]name!>> ;\n    <:>\n\n    <:refference_:>\n       <<name:up>> . <<name:up>> <? . <<name:up>> ?> \n    <:>\n\n    <:constructor:>\n        constructor (\n            <?\n                <|    @ <<'name'>>  ( <? <| <<'name'>> <||> ' <<'name'>> ' <||> \" <<'name'>> \" |>  <? , ?> ?> )\n                <||>  |>\n\n                <| private\n                <||> public\n                <||> |>\n\n                <| readonly <||> |>\n                <<'variable'>> : <<'name'>>\n                <? , ?>\n            ?>\n        ) { <---> } <| ; <||> \\n |>\n    <:>\n\n    <:function:>\n       <<'name'>> ( <? <<name>>  <| , <||> |> ?> ) { <---> } <| ; <||> \\n |>\n    <:>\n\n    <~~.module.ts~>\n\n        <:declarations:>\n            declarations : [\n                <?  \n                    <|  <<name>> <| ( ) <||> |> <? , ?>\n                    <||> // -->> \\n\n                    <||> /* -->> */\n                    |>\n                ?>\n            ] <| , <||> \\n |>\n        <:>\n\n        <:imports:>\n            imports : [\n                <?  \n                    <|    <<name>> <| ( ) <||> |> <? , ?>\n                    <||> // -->> \\n\n                    <||> /* -->> */\n                    |>\n                ?>\n            ] <| , <||> \\n |>\n        <:>\n\n        <:exports:>\n            exports : [\n                <?  \n                    <|    <<name>> <| ( ) <||> |> <? , ?>\n                    <||> // -->> \\n\n                    <||> /* -->> */\n                    |>\n                ?>\n            ] <| , <||> \\n |>\n        <:>\n\n        <:providers:>\n            providers : [\n                <?  \n                    <|    <<name>> <| ( ) <||> |> <? , ?>\n                    <||> // -->> \\n\n                    <||> /* -->> */\n                    |>\n                ?>\n            ] <| , <||> \\n |>\n        <:>\n\n        <:module:> \n            @NgModule ( { <---> } ) <? ; ?>\n            export class <<name:up>> <| extends <<name>> <||> |> { <---> }\n        <:>\n\n    <~>\n\n    <~~.service.ts~>\n        <:tap:>\n            <<'name'>>(() => this.log('fetched heroes'))\n        <:>\n\n        <:service_call:>\n            <| public <||> |> <<name:up>> ( <? <<'name'>> : <<'name'>>  <| [ ] <||> |> <| , <||> |> ?> ) : <<'name'>> <| <any> <||> |> { <---> }\n        <:>\n\n        <:service:>\n            <|  <||> @ <<'name2'>> (  <| <? <| , <||> |> <<'name2'>> ?>  <||> { } |>  { <---> } ) \\n |>\n            export <| default <||> |> class <<name:up>> <| <||> implements <<'name'>>  <?, <<'name'>> ?> |> { <---> }\n        <:>\n    <~>\n\n    <~~.component.ts~>\n\n         <:input:>\n            @Input ( -->> ) <| public <||> |> <| set <||> get <||> |> <<input>> <| ! <||> |>\n            <|   = -->> <| ; <||> \\n |>\n            <||> : -->> <| ; <||> \\n |>\n            <||> ( -->> ) <| : <<name>> <||> |> { <---> }\n            <||> ;\n            <||> \\n |>\n        <:>\n\n        <:output:>\n            @Output ( ) <<output>> <| : <<name>> <| < <<name>> > <||> |> <||> |> = new <<name>> <| < <<name>> > <||> |> ( ) <| ; <||> \\n |>\n        <:>\n\n        <:selector:> selector :  <| ' <<selector>> ' <||> \" <<selector>> \" |>  <| , <||> |> <:>\n        <:templateUrl:> templateUrl :  <<\"BBB\".html>> <| , <||> |> <:>\n        <:template:> template :  ` -->> ` <:>\n        <:styleUrls:> styleUrls : [ <? <<\"CCC\".css>>  <| , <||> |> ?> ] <| , <||> |> <:>\n        <:styleUrl:> styleUrl : <<\"CCC\".css>> <| , <||> |> <:>\n        <:standalone:> standalone :  <<standalone>>  <| , <||> |> <:>\n        <:imports_:> imports : <| <<name>> <||> [ <? <<name>>  <| , <||> |> ?> ] |> <| , <||> |> <:>\n        <:changeDetection_:> changeDetection : <| <<name>> <||> [ <? <<name>>  <| , <||> |> ?> ] |> <| , <||> |> <:>\n        <:providers_:> providers : <| <<name>> <||> [ <? <<name>>  <| , <||> |> ?> ] |> <| , <||> |> <:>\n\n        <:component:>\n            @Component ( { <---> } ) <? ; ?>\n            export <? default ?> class <<name:up>> <| <||> implements <<name>>  <? , <<name>> ?> |> { <-function-> }\n        <:>\n\n    <~>\n<~>\n\n<~\"BBB\".html~><~>\n<~\"CCC\".css~><~>\n<~package.json~>\n     <:dependencies:> \"dependencies\" : { <---> } <:>\n     <:material:> \"@angular/material\" : \" <<version>> \" <:>\n<~>",
+  "repoPatches": [
+    {
+      "key": 0,
+      "condition": "title===\"component\"",
+      "mods": [],
+      "subCon": [
+        {
+          "key": 1,
+          "condition": "!{[dependencies].standalone.0===\"true\"}",
+          "mods": [
+            {
+              "condition": 1,
+              "dir": "src/app/app.module.ts",
+              "key": 0,
+              "parent": "",
+              "patch": "@@ -5,12 +5,14 @@\n import { RouterModule } from '@angular/router';\n import { MatTooltipModule } from '@angular/material/tooltip';\n import { MatButtonModule } from '@angular/material/button';\n import { AppComponent } from './app.component';\n+import { <~name.0~> } from '../../<~file~.ts~>';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n+    <~name.0~>,\n   ],\n   imports: [\n     BrowserModule,\n     CommonModule,\n",
+              "patchText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\nimport { <~name.0~> } from '../../<~file~.ts~>';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    <~name.0~>,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+              "fileText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+              "selector": "componentDeclaration"
+            }
+          ],
+          "subCon": []
+        },
+        {
+          "key": 2,
+          "condition": "{[dependencies].standalone.0===\"true\"}",
+          "mods": [
+            {
+              "condition": 2,
+              "dir": "src/app/app.module.ts",
+              "key": 1,
+              "parent": "",
+              "patch": "@@ -5,8 +5,9 @@\n import { RouterModule } from '@angular/router';\n import { MatTooltipModule } from '@angular/material/tooltip';\n import { MatButtonModule } from '@angular/material/button';\n import { AppComponent } from './app.component';\n+import { <~name.0~> } from '../../<~file~.ts~>';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n@@ -17,8 +18,9 @@\n     FormsModule,\n     RouterModule.forRoot([]),\n     MatTooltipModule,\n     MatButtonModule,\n+    <~name.0~>,\n   ],\n   providers: [\n   ],\n   bootstrap: [AppComponent]\n",
+              "patchText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\nimport { <~name.0~> } from '../../<~file~.ts~>';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n    <~name.0~>,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+              "fileText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+              "selector": "standaloneImport"
+            }
+          ],
+          "subCon": []
+        },
+        {
+          "key": 3,
+          "condition": "[dependencies].title===\"selector\"",
+          "mods": [
+            {
+              "condition": 3,
+              "dir": "src/app/app.component.html",
+              "key": 2,
+              "parent": "",
+              "patch": "@@ -1,3 +1,4 @@\n <div class=\"workbench\">\n   <!-- crodox: extracted component is rendered here -->\n+  <<~selector.0~>></<~selector.0~>>\n </div>\n",
+              "patchText": "<div class=\"workbench\">\n  <!-- crodox: extracted component is rendered here -->\n  <<~selector.0~>></<~selector.0~>>\n</div>\n",
+              "fileText": "<div class=\"workbench\">\n  <!-- crodox: extracted component is rendered here -->\n</div>\n",
+              "selector": "renderInHost"
+            }
+          ],
+          "subCon": []
+        },
+        {
+          "key": 4,
+          "condition": "[dependencies].title===\"import\"",
+          "mods": [],
+          "subCon": [
+            {
+              "key": 5,
+              "condition": "\"from\".0===\"moment\"",
+              "mods": [
+                {
+                  "condition": 5,
+                  "dir": "package.json",
+                  "key": 3,
+                  "parent": "",
+                  "patch": "@@ -22,8 +22,9 @@\n     \"@angular/router\": \"^14.2.0\",\n     \"bootstrap-notify\": \"3.1.3\",\n     \"chartist\": \"0.11.4\",\n     \"jquery\": \"3.6.0\",\n+    \"moment\": \"2.29.1\",\n     \"rxjs\": \"~7.5.0\",\n     \"tslib\": \"^2.3.0\",\n     \"zone.js\": \"~0.11.4\"\n   },\n",
+                  "patchText": "{\n  \"name\": \"benchmark-workbench-template\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"description\": \"Crodox workbench template: minimal Angular 14 host for one extracted component from material-dashboard-angular2\",\n  \"scripts\": {\n    \"ng\": \"ng\",\n    \"build\": \"ng build\",\n    \"test\": \"ng test\",\n    \"test:headless\": \"ng test --watch=false --karma-config karma.headless.js\"\n  },\n  \"dependencies\": {\n    \"@angular/animations\": \"^14.2.0\",\n    \"@angular/cdk\": \"^14.2.0\",\n    \"@angular/common\": \"^14.2.0\",\n    \"@angular/compiler\": \"^14.2.0\",\n    \"@angular/core\": \"^14.2.0\",\n    \"@angular/forms\": \"^14.2.0\",\n    \"@angular/material\": \"^14.2.0\",\n    \"@angular/platform-browser\": \"^14.2.0\",\n    \"@angular/platform-browser-dynamic\": \"^14.2.0\",\n    \"@angular/router\": \"^14.2.0\",\n    \"bootstrap-notify\": \"3.1.3\",\n    \"chartist\": \"0.11.4\",\n    \"jquery\": \"3.6.0\",\n    \"moment\": \"2.29.1\",\n    \"rxjs\": \"~7.5.0\",\n    \"tslib\": \"^2.3.0\",\n    \"zone.js\": \"~0.11.4\"\n  },\n  \"devDependencies\": {\n    \"@angular-devkit/build-angular\": \"^14.2.7\",\n    \"@angular/cli\": \"~14.2.7\",\n    \"@angular/compiler-cli\": \"^14.2.0\",\n    \"@types/chartist\": \"0.11.1\",\n    \"@types/jasmine\": \"~4.0.0\",\n    \"@types/jquery\": \"3.5.6\",\n    \"@types/node\": \"^17.0.21\",\n    \"jasmine-core\": \"~4.4.0\",\n    \"karma\": \"~6.4.0\",\n    \"karma-chrome-launcher\": \"~3.1.0\",\n    \"karma-coverage-istanbul-reporter\": \"~3.0.3\",\n    \"karma-jasmine\": \"~5.1.0\",\n    \"karma-jasmine-html-reporter\": \"~2.0.0\",\n    \"typescript\": \"~4.7.2\"\n  }\n}\n",
+                  "fileText": "{\n  \"name\": \"benchmark-workbench-template\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"description\": \"Crodox workbench template: minimal Angular 14 host for one extracted component from material-dashboard-angular2\",\n  \"scripts\": {\n    \"ng\": \"ng\",\n    \"build\": \"ng build\",\n    \"test\": \"ng test\",\n    \"test:headless\": \"ng test --watch=false --karma-config karma.headless.js\"\n  },\n  \"dependencies\": {\n    \"@angular/animations\": \"^14.2.0\",\n    \"@angular/cdk\": \"^14.2.0\",\n    \"@angular/common\": \"^14.2.0\",\n    \"@angular/compiler\": \"^14.2.0\",\n    \"@angular/core\": \"^14.2.0\",\n    \"@angular/forms\": \"^14.2.0\",\n    \"@angular/material\": \"^14.2.0\",\n    \"@angular/platform-browser\": \"^14.2.0\",\n    \"@angular/platform-browser-dynamic\": \"^14.2.0\",\n    \"@angular/router\": \"^14.2.0\",\n    \"bootstrap-notify\": \"3.1.3\",\n    \"chartist\": \"0.11.4\",\n    \"jquery\": \"3.6.0\",\n    \"rxjs\": \"~7.5.0\",\n    \"tslib\": \"^2.3.0\",\n    \"zone.js\": \"~0.11.4\"\n  },\n  \"devDependencies\": {\n    \"@angular-devkit/build-angular\": \"^14.2.7\",\n    \"@angular/cli\": \"~14.2.7\",\n    \"@angular/compiler-cli\": \"^14.2.0\",\n    \"@types/chartist\": \"0.11.1\",\n    \"@types/jasmine\": \"~4.0.0\",\n    \"@types/jquery\": \"3.5.6\",\n    \"@types/node\": \"^17.0.21\",\n    \"jasmine-core\": \"~4.4.0\",\n    \"karma\": \"~6.4.0\",\n    \"karma-chrome-launcher\": \"~3.1.0\",\n    \"karma-coverage-istanbul-reporter\": \"~3.0.3\",\n    \"karma-jasmine\": \"~5.1.0\",\n    \"karma-jasmine-html-reporter\": \"~2.0.0\",\n    \"typescript\": \"~4.7.2\"\n  }\n}\n",
+                  "selector": "momentDependency"
+                }
+              ],
+              "subCon": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": 6,
+      "condition": "title===\"service\"",
+      "mods": [
+        {
+          "condition": 6,
+          "dir": "src/app/app.module.ts",
+          "key": 4,
+          "parent": "",
+          "patch": "@@ -5,8 +5,9 @@\n import { RouterModule } from '@angular/router';\n import { MatTooltipModule } from '@angular/material/tooltip';\n import { MatButtonModule } from '@angular/material/button';\n import { AppComponent } from './app.component';\n+import { <~name.0~> } from '../../<~file~.ts~>';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n@@ -19,8 +20,9 @@\n     MatTooltipModule,\n     MatButtonModule,\n   ],\n   providers: [\n+    <~name.0~>,\n   ],\n   bootstrap: [AppComponent]\n })\n export class AppModule { }\n",
+          "patchText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\nimport { <~name.0~> } from '../../<~file~.ts~>';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n    <~name.0~>,\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+          "fileText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+          "selector": "serviceProvider"
+        }
+      ],
+      "subCon": []
+    },
+    {
+      "key": 7,
+      "condition": "title===\"module\"",
+      "mods": [
+        {
+          "condition": 7,
+          "dir": "src/app/app.module.ts",
+          "key": 5,
+          "parent": "",
+          "patch": "@@ -5,8 +5,9 @@\n import { RouterModule } from '@angular/router';\n import { MatTooltipModule } from '@angular/material/tooltip';\n import { MatButtonModule } from '@angular/material/button';\n import { AppComponent } from './app.component';\n+import { <~name.0~> } from '../../<~file~.ts~>';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n@@ -17,8 +18,9 @@\n     FormsModule,\n     RouterModule.forRoot([]),\n     MatTooltipModule,\n     MatButtonModule,\n+    <~name.0~>,\n   ],\n   providers: [\n   ],\n   bootstrap: [AppComponent]\n",
+          "patchText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\nimport { <~name.0~> } from '../../<~file~.ts~>';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n    <~name.0~>,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+          "fileText": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { RouterModule } from '@angular/router';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatButtonModule } from '@angular/material/button';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    RouterModule.forRoot([]),\n    MatTooltipModule,\n    MatButtonModule,\n  ],\n  providers: [\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+          "selector": "moduleImport"
+        }
+      ],
+      "subCon": []
+    }
+  ],
+  "repo": "workbench-template"
+}
