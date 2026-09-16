@@ -1,0 +1,95 @@
+{
+  "benchmark": "Task-Isolation Benchmark v1 (standalone)",
+  "origin_repo": {
+    "url": "https://github.com/creativetimofficial/material-dashboard-angular2",
+    "commit": "dcecb236dc78b3bab82372dea6405b3751719b12",
+    "note": "full-repo/ is a copy of this commit (no .git inside; the benchmark repository tracks it). Reset with `git checkout -- full-repo && git clean -fd full-repo` before every Arm A run."
+  },
+  "arms": {
+    "A_full_repo": "GitHub Copilot agent mode opened on full-repo/ (the complete origin repository at the pinned commit).",
+    "B_workbench": "GitHub Copilot agent mode opened on slices/<slice_dir>/ (only the sliced component plus its dependencies)."
+  },
+  "runs_per_cell": 3,
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Typed data source for the table list",
+      "component": "TableListComponent",
+      "slice_root": "src/app/table-list",
+      "slice_dir": "T1-table-list",
+      "prompt_file": "prompts/T1.md",
+      "spec_file": "specs/table-list.bench.spec.ts",
+      "spec_target_path": "src/app/table-list/table-list.bench.spec.ts",
+      "allowed_files": [
+        "src/app/table-list/table-list.component.ts",
+        "src/app/table-list/table-list.component.html",
+        "src/app/table-list/table-list.component.spec.ts",
+        "src/app/table-list/employee.ts"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Menu filter for the sidebar",
+      "component": "SidebarComponent",
+      "slice_root": "src/app/components/sidebar",
+      "slice_dir": "T2-sidebar",
+      "prompt_file": "prompts/T2.md",
+      "spec_file": "specs/sidebar.bench.spec.ts",
+      "spec_target_path": "src/app/components/sidebar/sidebar.bench.spec.ts",
+      "allowed_files": [
+        "src/app/components/sidebar/sidebar.component.ts",
+        "src/app/components/sidebar/sidebar.component.html",
+        "src/app/components/sidebar/sidebar.component.spec.ts"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "Configurable footer",
+      "component": "FooterComponent",
+      "slice_root": "src/app/components/footer",
+      "slice_dir": "T3-footer",
+      "prompt_file": "prompts/T3.md",
+      "spec_file": "specs/footer.bench.spec.ts",
+      "spec_target_path": "src/app/components/footer/footer.bench.spec.ts",
+      "allowed_files": [
+        "src/app/components/footer/footer.component.ts",
+        "src/app/components/footer/footer.component.html",
+        "src/app/components/footer/footer.component.spec.ts"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Testable notification API",
+      "component": "NotificationsComponent",
+      "slice_root": "src/app/notifications",
+      "slice_dir": "T4-notifications",
+      "prompt_file": "prompts/T4.md",
+      "spec_file": "specs/notifications.bench.spec.ts",
+      "spec_target_path": "src/app/notifications/notifications.bench.spec.ts",
+      "allowed_files": [
+        "src/app/notifications/notifications.component.ts",
+        "src/app/notifications/notifications.component.html",
+        "src/app/notifications/notifications.component.spec.ts"
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Extract chart data from the dashboard",
+      "component": "DashboardComponent",
+      "slice_root": "src/app/dashboard",
+      "slice_dir": "T5-dashboard",
+      "prompt_file": "prompts/T5.md",
+      "spec_file": "specs/dashboard.bench.spec.ts",
+      "spec_target_path": "src/app/dashboard/dashboard.bench.spec.ts",
+      "allowed_files": [
+        "src/app/dashboard/dashboard.component.ts",
+        "src/app/dashboard/dashboard.component.html",
+        "src/app/dashboard/dashboard.component.spec.ts",
+        "src/app/dashboard/chart-data.ts"
+      ]
+    }
+  ],
+  "slices": {
+    "note": "slices/<slice_dir> is a minimal Angular 14 project that contains only the task's component at its original path plus what it needs to compile and test. Built by hand for this benchmark; it mirrors what a codebase-slicing tool produces. Reset with `git checkout -- slices/<slice_dir> && git clean -fd slices/<slice_dir>`."
+  }
+}

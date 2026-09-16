@@ -1,0 +1,500 @@
+diff --git a/src/app/components/footer/footer.component.html b/src/app/components/footer/footer.component.html
+index 4eda89a..1d07f90 100644
+--- a/src/app/components/footer/footer.component.html
++++ b/src/app/components/footer/footer.component.html
+@@ -26,8 +26,8 @@
+         </nav>
+         <div class="copyright pull-right">
+             &copy;
+-            {{test | date: 'yyyy'}}, made with love by
+-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
++            {{copyrightYear}}, made with love by
++            <a [href]="companyUrl" target="_blank">{{companyName}}</a> for a better web.
+         </div>
+     </div>
+ </footer>
+diff --git a/src/app/components/footer/footer.component.ts b/src/app/components/footer/footer.component.ts
+index 6c9228a..ffc3386 100644
+--- a/src/app/components/footer/footer.component.ts
++++ b/src/app/components/footer/footer.component.ts
+@@ -1,4 +1,4 @@
+-import { Component, OnInit } from '@angular/core';
++import { Component, Input, OnInit } from '@angular/core';
+ 
+ @Component({
+   selector: 'app-footer',
+@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
+ })
+ export class FooterComponent implements OnInit {
+   test : Date = new Date();
+-  
++  @Input() companyName: string = 'Creative Tim';
++  @Input() companyUrl: string = 'https://www.creative-tim.com';
++
+   constructor() { }
+ 
+   ngOnInit() {
+   }
+ 
++  get copyrightYear(): number {
++    return this.test.getFullYear();
++  }
+ }
+diff --git a/src/app/components/sidebar/sidebar.component.html b/src/app/components/sidebar/sidebar.component.html
+index efeea8b..a038ae1 100644
+--- a/src/app/components/sidebar/sidebar.component.html
++++ b/src/app/components/sidebar/sidebar.component.html
+@@ -54,6 +54,7 @@
+         </li>
+     </ul>
+   </div>
++    <input type="text" class="form-control" placeholder="Filter menu" [value]="activeFilter" (input)="filterMenu($any($event.target).value)">
+     <ul class="nav">
+         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+             <a class="nav-link" [routerLink]="[menuItem.path]">
+diff --git a/src/app/components/sidebar/sidebar.component.ts b/src/app/components/sidebar/sidebar.component.ts
+index 70eb5fc..fdc011e 100644
+--- a/src/app/components/sidebar/sidebar.component.ts
++++ b/src/app/components/sidebar/sidebar.component.ts
+@@ -25,12 +25,20 @@ export const ROUTES: RouteInfo[] = [
+ })
+ export class SidebarComponent implements OnInit {
+   menuItems: any[];
++  activeFilter = '';
+ 
+   constructor() { }
+ 
+   ngOnInit() {
+     this.menuItems = ROUTES.filter(menuItem => menuItem);
+   }
++  filterMenu(query: string): void {
++    const q = (query || '').trim();
++    this.activeFilter = q;
++    this.menuItems = q
++      ? ROUTES.filter(menuItem => menuItem.title.toLowerCase().includes(q.toLowerCase()))
++      : ROUTES.filter(menuItem => menuItem);
++  }
+   isMobileMenu() {
+       if ($(window).width() > 991) {
+           return false;
+diff --git a/src/app/dashboard/dashboard.component.ts b/src/app/dashboard/dashboard.component.ts
+index 36a0b02..6bf757a 100644
+--- a/src/app/dashboard/dashboard.component.ts
++++ b/src/app/dashboard/dashboard.component.ts
+@@ -1,6 +1,11 @@
+ import { Component, OnInit } from '@angular/core';
+ import * as Chartist from 'chartist';
+ 
++export interface ChartData {
++  labels: string[];
++  series: number[][];
++}
++
+ @Component({
+   selector: 'app-dashboard',
+   templateUrl: './dashboard.component.html',
+@@ -9,6 +14,24 @@ import * as Chartist from 'chartist';
+ export class DashboardComponent implements OnInit {
+ 
+   constructor() { }
++
++  getDailySalesData(): ChartData {
++      return { labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'], series: [[12, 17, 7, 17, 23, 18, 38]] };
++  }
++
++  getCompletedTasksData(): ChartData {
++      return { labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'], series: [[230, 750, 450, 300, 280, 240, 200, 190]] };
++  }
++
++  getWebsiteViewsData(): ChartData {
++      return { labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]] };
++  }
++
++  suggestedHigh(series: number[][]): number {
++      const max = Math.max(...series.map(s => Math.max(...s)));
++      return (Math.floor(max / 10) + 1) * 10;
++  }
++
+   startAnimationForLineChart(chart){
+       let seq: any, delays: any, durations: any;
+       seq = 0;
+@@ -68,19 +91,14 @@ export class DashboardComponent implements OnInit {
+   ngOnInit() {
+       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
+ 
+-      const dataDailySalesChart: any = {
+-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+-          series: [
+-              [12, 17, 7, 17, 23, 18, 38]
+-          ]
+-      };
++      const dataDailySalesChart: any = this.getDailySalesData();
+ 
+      const optionsDailySalesChart: any = {
+           lineSmooth: Chartist.Interpolation.cardinal({
+               tension: 0
+           }),
+           low: 0,
+-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
++          high: this.suggestedHigh(dataDailySalesChart.series),
+           chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
+       }
+ 
+@@ -91,19 +109,14 @@ export class DashboardComponent implements OnInit {
+ 
+       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
+ 
+-      const dataCompletedTasksChart: any = {
+-          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+-          series: [
+-              [230, 750, 450, 300, 280, 240, 200, 190]
+-          ]
+-      };
++      const dataCompletedTasksChart: any = this.getCompletedTasksData();
+ 
+      const optionsCompletedTasksChart: any = {
+           lineSmooth: Chartist.Interpolation.cardinal({
+               tension: 0
+           }),
+           low: 0,
+-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
++          high: this.suggestedHigh(dataCompletedTasksChart.series),
+           chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
+       }
+ 
+@@ -116,19 +129,13 @@ export class DashboardComponent implements OnInit {
+ 
+       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+ 
+-      var datawebsiteViewsChart = {
+-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+-        series: [
+-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+-
+-        ]
+-      };
++      var datawebsiteViewsChart = this.getWebsiteViewsData();
+       var optionswebsiteViewsChart = {
+           axisX: {
+               showGrid: false
+           },
+           low: 0,
+-          high: 1000,
++          high: this.suggestedHigh(datawebsiteViewsChart.series),
+           chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
+       };
+       var responsiveOptions: any[] = [
+diff --git a/src/app/notifications/notifications.component.ts b/src/app/notifications/notifications.component.ts
+index 711cb9b..73a3cf5 100644
+--- a/src/app/notifications/notifications.component.ts
++++ b/src/app/notifications/notifications.component.ts
+@@ -7,18 +7,28 @@ declare var $: any;
+ })
+ export class NotificationsComponent implements OnInit {
+ 
++  lastNotification: { from: string; align: string; type: string; message: string } | null = null;
++
+   constructor() { }
+-  showNotification(from, align){
+-      const type = ['','info','success','warning','danger'];
+ 
++  pickType(index: number): string {
++      const types = ['info', 'success', 'warning', 'danger'];
++      return types[index - 1] || 'info';
++  }
++
++  showNotification(from: string, align: string, message?: string): void {
++      const text = message !== undefined ? message
++          : "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer.";
+       const color = Math.floor((Math.random() * 4) + 1);
++      const type = this.pickType(color);
++      this.lastNotification = { from, align, type, message: text };
+ 
+       $.notify({
+           icon: "notifications",
+-          message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
++          message: text
+ 
+       },{
+-          type: type[color],
++          type: type,
+           timer: 4000,
+           placement: {
+               from: from,
+diff --git a/src/app/table-list/employee.ts b/src/app/table-list/employee.ts
+new file mode 100644
+index 0000000..16f2624
+--- /dev/null
++++ b/src/app/table-list/employee.ts
+@@ -0,0 +1,7 @@
++export interface Employee {
++  id: number;
++  name: string;
++  country: string;
++  city: string;
++  salary: number;
++}
+diff --git a/src/app/table-list/table-list.component.html b/src/app/table-list/table-list.component.html
+index 794f9ca..a1ee025 100644
+--- a/src/app/table-list/table-list.component.html
++++ b/src/app/table-list/table-list.component.html
+@@ -28,107 +28,12 @@
+                                   </th>
+                               </thead>
+                               <tbody>
+-                                  <tr>
+-                                      <td>
+-                                          1
+-                                      </td>
+-                                      <td>
+-                                          Dakota Rice
+-                                      </td>
+-                                      <td>
+-                                          Niger
+-                                      </td>
+-                                      <td>
+-                                          Oud-Turnhout
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $36,738
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          2
+-                                      </td>
+-                                      <td>
+-                                          Minerva Hooper
+-                                      </td>
+-                                      <td>
+-                                          Curaçao
+-                                      </td>
+-                                      <td>
+-                                          Sinaai-Waas
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $23,789
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          3
+-                                      </td>
+-                                      <td>
+-                                          Sage Rodriguez
+-                                      </td>
+-                                      <td>
+-                                          Netherlands
+-                                      </td>
+-                                      <td>
+-                                          Baileux
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $56,142
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          4
+-                                      </td>
+-                                      <td>
+-                                          Philip Chaney
+-                                      </td>
+-                                      <td>
+-                                          Korea, South
+-                                      </td>
+-                                      <td>
+-                                          Overland Park
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $38,735
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          5
+-                                      </td>
+-                                      <td>
+-                                          Doris Greene
+-                                      </td>
+-                                      <td>
+-                                          Malawi
+-                                      </td>
+-                                      <td>
+-                                          Feldkirchen in Kärnten
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $63,542
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          6
+-                                      </td>
+-                                      <td>
+-                                          Mason Porter
+-                                      </td>
+-                                      <td>
+-                                          Chile
+-                                      </td>
+-                                      <td>
+-                                          Gloucester
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $78,615
+-                                      </td>
++                                  <tr *ngFor="let e of employees">
++                                      <td>{{ e.id }}</td>
++                                      <td>{{ e.name }}</td>
++                                      <td>{{ e.country }}</td>
++                                      <td>{{ e.city }}</td>
++                                      <td class="text-primary">{{ e.salary | currency:'USD':'symbol':'1.0-0' }}</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+@@ -163,107 +68,12 @@
+                                   </th>
+                               </thead>
+                               <tbody>
+-                                  <tr>
+-                                      <td>
+-                                          1
+-                                      </td>
+-                                      <td>
+-                                          Dakota Rice
+-                                      </td>
+-                                      <td>
+-                                          Niger
+-                                      </td>
+-                                      <td>
+-                                          Oud-Turnhout
+-                                      </td>
+-                                      <td>
+-                                          $36,738
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          2
+-                                      </td>
+-                                      <td>
+-                                          Minerva Hooper
+-                                      </td>
+-                                      <td>
+-                                          Curaçao
+-                                      </td>
+-                                      <td>
+-                                          Sinaai-Waas
+-                                      </td>
+-                                      <td>
+-                                          $23,789
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          3
+-                                      </td>
+-                                      <td>
+-                                          Sage Rodriguez
+-                                      </td>
+-                                      <td>
+-                                          Netherlands
+-                                      </td>
+-                                      <td>
+-                                          Baileux
+-                                      </td>
+-                                      <td>
+-                                          $56,142
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          4
+-                                      </td>
+-                                      <td>
+-                                          Philip Chaney
+-                                      </td>
+-                                      <td>
+-                                          Korea, South
+-                                      </td>
+-                                      <td>
+-                                          Overland Park
+-                                      </td>
+-                                      <td>
+-                                          $38,735
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          5
+-                                      </td>
+-                                      <td>
+-                                          Doris Greene
+-                                      </td>
+-                                      <td>
+-                                          Malawi
+-                                      </td>
+-                                      <td>
+-                                          Feldkirchen in Kärnten
+-                                      </td>
+-                                      <td>
+-                                          $63,542
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          6
+-                                      </td>
+-                                      <td>
+-                                          Mason Porter
+-                                      </td>
+-                                      <td>
+-                                          Chile
+-                                      </td>
+-                                      <td>
+-                                          Gloucester
+-                                      </td>
+-                                      <td>
+-                                          $78,615
+-                                      </td>
++                                  <tr *ngFor="let e of employees">
++                                      <td>{{ e.id }}</td>
++                                      <td>{{ e.name }}</td>
++                                      <td>{{ e.country }}</td>
++                                      <td>{{ e.city }}</td>
++                                      <td>{{ e.salary | currency:'USD':'symbol':'1.0-0' }}</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+diff --git a/src/app/table-list/table-list.component.ts b/src/app/table-list/table-list.component.ts
+index 64b6b4f..f913614 100644
+--- a/src/app/table-list/table-list.component.ts
++++ b/src/app/table-list/table-list.component.ts
+@@ -1,4 +1,5 @@
+ import { Component, OnInit } from '@angular/core';
++import { Employee } from './employee';
+ 
+ @Component({
+   selector: 'app-table-list',
+@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
+   styleUrls: ['./table-list.component.css']
+ })
+ export class TableListComponent implements OnInit {
++  employees: Employee[] = [
++    { id: 1, name: 'Dakota Rice', country: 'Niger', city: 'Oud-Turnhout', salary: 36738 },
++    { id: 2, name: 'Minerva Hooper', country: 'Curaçao', city: 'Sinaai-Waas', salary: 23789 },
++    { id: 3, name: 'Sage Rodriguez', country: 'Netherlands', city: 'Baileux', salary: 56142 },
++    { id: 4, name: 'Philip Chaney', country: 'Korea, South', city: 'Overland Park', salary: 38735 },
++    { id: 5, name: 'Doris Greene', country: 'Malawi', city: 'Feldkirchen in Kärnten', salary: 63542 },
++    { id: 6, name: 'Mason Porter', country: 'Chile', city: 'Gloucester', salary: 78615 },
++  ];
+ 
+   constructor() { }
+ 
+   ngOnInit() {
+   }
+ 
++  totalSalary(): number {
++    return this.employees.reduce((sum, e) => sum + e.salary, 0);
++  }
+ }

@@ -1,0 +1,96 @@
+# Task-Isolation Benchmark
+
+Does a coding agent work cheaper and more precisely when it sees only the component it has to change, instead of the whole repository? This repository is a self-contained experiment that answers that question for one real Angular codebase. It depends on no external tool: both arms are plain folders in this repository.
+
+* **Arm A, full repository:** `full-repo/`, a copy of [material-dashboard-angular2](https://github.com/creativetimofficial/material-dashboard-angular2) at commit `dcecb236dc78b3bab82372dea6405b3751719b12` (Angular 14, MIT).
+* **Arm B, isolated slice:** `slices/<task>/`, a minimal Angular project that contains only the task's component at its original path plus what it needs to compile and test. The slices were built by hand for this benchmark; they mirror what a codebase-slicing tool produces.
+
+Five tasks, one prompt each, run in both arms with GitHub Copilot in agent mode, three repetitions, 30 runs. Everything else is identical.
+
+## Layout
+
+```
+full-repo/                 Arm A, origin repository at the pinned commit (+ karma.headless.js)
+slices/T1-table-list/      Arm B for task T1 ... T5-dashboard/
+kit/tasks.json             task definitions, allowed files, spec paths
+kit/prompts/T1..T5.md      exact prompt text, paste verbatim in both arms
+kit/specs/*.bench.spec.ts  hidden acceptance tests, copied in only after a run
+kit/scripts/score_diff.py      diff precision for one run
+kit/scripts/context_tokens.py  offered context per arm (static)
+kit/scripts/analyze.py         aggregates results.csv into summary.md and summary.png
+kit/results/results_template.csv, SPALTEN.md (column reference)
+kit/reference/reference-solution.patch   a solution that passes all hidden specs; never in an arm during a run
+kit/DEMO_WALKTHROUGH.md    ten-minute live demo, step by step
+setup.sh                   installs dependencies in all six projects
+test.sh <project>          runs the headless test suite of one project
+```
+
+## Setup
+
+Node 16 or 18 is what Angular 14 supports. Node 22 works with a warning. `npm install` needs `--legacy-peer-deps` because the origin's lock file pins an older build toolchain; `setup.sh` does that.
+
+```
+./setup.sh                      # npm install --legacy-peer-deps in full-repo and all slices
+./test.sh full-repo             # 15 specs, 3 fail upstream (AppComponent x2, MapsComponent); that is the origin's state
+./test.sh slices/T3-footer      # 1 spec, passes
+pip install tiktoken matplotlib # for the scripts
+```
+
+Karma needs a Chrome or Chromium binary. If it is not found, set `CHROME_BIN`.
+
+The three failing upstream specs in `full-repo` are pre-existing and unrelated to the five components. They are not counted. Only the `*.bench.spec.ts` results enter the benchmark.
+
+## Verification already done
+
+* All five hidden specs compile against the unmodified code and fail as intended (18 of 20 test cases fail; T1.4 and T2.1 are regression guards that pass on the original).
+* With `kit/reference/reference-solution.patch` applied, all 18 pass in `full-repo` and in every slice, and `ng build` succeeds in all six projects.
+* Offered context at the pinned commit (application code plus configuration, `kit/scripts/context_tokens.py`):
+
+| Task | Slice | Slice tokens | Full repo tokens | Reduction |
+| --- | --- | --- | --- | --- |
+| T1 | T1-table-list | 3,845 | 31,864 | 88% |
+| T2 | T2-sidebar | 3,514 | 31,864 | 89% |
+| T3 | T3-footer | 2,770 | 31,864 | 91% |
+| T4 | T4-notifications | 4,335 | 31,864 | 86% |
+| T5 | T5-dashboard | 8,146 | 31,864 | 74% |
+
+These numbers describe what the agent can see, not what it reads. The measured credits from the runs are the result.
+
+## What we measure
+
+| Metric | Source | Why |
+| --- | --- | --- |
+| Credits per prompt | VS Code: hover over the chat response | The number a Copilot user pays |
+| Context tokens per session | VS Code: context window control in the chat input, session info | Explains the credits |
+| Tool calls, duration, references | VS Code: Agent Debug Logs summary, "Used N references" | How much the agent had to search |
+| Tests passed | Hidden spec per task | Did the agent do what was asked? |
+| Diff precision | `kit/scripts/score_diff.py` | Did the agent touch only files that belong to the task? |
+
+Precision index = mean of test pass rate and diff precision. It is the one number for a slide; both components are always reported next to it.
+
+## One run
+
+1. Reset. Arm A: `git checkout -- full-repo && git clean -fd full-repo`. Arm B: same for `slices/<task>`.
+2. Open the arm's folder as the VS Code workspace root (not this repository's root; the agent must not see the other arm or `kit/`).
+3. Copilot Chat, agent mode, same model in both arms, new chat. Record the model name.
+4. Paste `kit/prompts/<task>.md` verbatim. No follow-ups. Accept all edits.
+5. Record credits (hover), session tokens (context window control), tool calls and duration (Agent Debug Logs), references.
+6. `python3 kit/scripts/score_diff.py --task <task> --repo <arm folder>` from the repository root. Record `files_changed` and `files_in_scope`.
+7. Copy the hidden spec to `spec_target_path` inside the arm folder, run `./test.sh <arm folder>`, record `tests_passed`. Run `npx ng build` in the arm folder, record `build_ok`.
+8. Append one row to `kit/results/results.csv`.
+
+## Analysis
+
+```
+python3 kit/scripts/analyze.py kit/results/results.csv --out kit/results/summary
+```
+
+`summary.md` has the per-task table and the overall reduction; `summary.png` the three-panel chart.
+
+## Rules that keep the comparison honest
+
+* Same model, same day, same VS Code and Copilot extension version for all 30 runs. Note the versions in the results file.
+* The prompt names the component but no file paths, so both arms have to locate the code.
+* Hidden specs, the reference solution and the other arm are never inside the agent's workspace.
+* Runs are not discarded. A run where the agent fails is a data point.
+* Report means and medians per task. Three runs per cell describe this repository and these tasks; they are not a general claim about all codebases.
