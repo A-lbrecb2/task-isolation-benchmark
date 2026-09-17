@@ -1,13 +1,14 @@
 {
-  "benchmark": "Task-Isolation Benchmark v1 (standalone)",
+  "benchmark": "Task-Isolation Benchmark v2 (three arms, standalone)",
   "origin_repo": {
     "url": "https://github.com/creativetimofficial/material-dashboard-angular2",
     "commit": "dcecb236dc78b3bab82372dea6405b3751719b12",
     "note": "full-repo/ is a copy of this commit (no .git inside; the benchmark repository tracks it). Reset with `git checkout -- full-repo && git clean -fd full-repo` before every Arm A run."
   },
   "arms": {
-    "A_full_repo": "GitHub Copilot agent mode opened on full-repo/ (the complete origin repository at the pinned commit).",
-    "B_workbench": "GitHub Copilot agent mode opened on slices/<slice_dir>/ (only the sliced component plus its dependencies)."
+    "A_full_repo": "Full repository, no guardrails. Baseline.",
+    "B_full_repo_guardrails": "Full repository plus generated guardrails: .github/copilot-instructions.md (scope, allowed files, rules) and .vscode/settings.json (files.exclude / search.exclude hide everything outside the task folder). Tests whether instructions and visibility restrictions alone achieve what isolation achieves.",
+    "C_isolation": "Isolated slice (slices/<slice_dir>) or Crodox workbench, plus the same generated copilot-instructions.md. Structural isolation with automatic guardrails."
   },
   "runs_per_cell": 3,
   "tasks": [
@@ -91,5 +92,9 @@
   ],
   "slices": {
     "note": "slices/<slice_dir> is a minimal Angular 14 project that contains only the task's component at its original path plus what it needs to compile and test. Built by hand for this benchmark; it mirrors what a codebase-slicing tool produces. Reset with `git checkout -- slices/<slice_dir> && git clean -fd slices/<slice_dir>`."
+  },
+  "guardrails": {
+    "generator": "kit/scripts/make_guardrails.py",
+    "note": "Run before opening the arm in VS Code: --arm B for the full repository, --arm C for a slice. Arm A gets none. git clean -fd removes them; score_diff.py ignores them."
   }
 }

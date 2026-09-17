@@ -1,23 +1,25 @@
 # Task-Isolation Benchmark
 
-Does a coding agent work cheaper and more precisely when it sees only the component it has to change, instead of the whole repository? This repository is a self-contained experiment that answers that question for one real Angular codebase. It depends on no external tool: both arms are plain folders in this repository. An optional third arm with Crodox-generated workbenches is described in `kit/CRODOX_INTEGRATION.md`.
+Does a coding agent work cheaper and more precisely when it sees only the component it has to change, instead of the whole repository? And is that better than simply telling the agent to stay in scope? This repository is a self-contained three-way experiment on one real Angular codebase. It depends on no external tool: all arms are plain folders in this repository. Crodox-generated workbenches can replace the hand-built slices in arm C; see `kit/CRODOX_INTEGRATION.md`.
 
-* **Arm A, full repository:** `full-repo/`, a copy of [material-dashboard-angular2](https://github.com/creativetimofficial/material-dashboard-angular2) at commit `dcecb236dc78b3bab82372dea6405b3751719b12` (Angular 14, MIT).
-* **Arm B, isolated slice:** `slices/<task>/`, a minimal Angular project that contains only the task's component at its original path plus what it needs to compile and test. The slices were built by hand for this benchmark; they mirror what a codebase-slicing tool produces.
+* **Arm A, full repository, no guardrails:** `full-repo/`, a copy of [material-dashboard-angular2](https://github.com/creativetimofficial/material-dashboard-angular2) at commit `dcecb236dc78b3bab82372dea6405b3751719b12` (Angular 14, MIT). The baseline.
+* **Arm B, full repository plus guardrails:** the same folder, plus two generated files: `.github/copilot-instructions.md` (task scope, allowed files, rules) and `.vscode/settings.json` (`files.exclude` and `search.exclude` hide everything outside the task folder). This is the strongest thing you can do without changing the codebase the agent runs in. If isolation does not beat this arm, isolation is not worth a tool.
+* **Arm C, isolation plus guardrails:** `slices/<task>/`, a minimal Angular project that contains only the task's component at its original path plus what it needs to compile and test, plus the same generated `copilot-instructions.md`. The slices were built by hand; they mirror what a codebase-slicing tool produces, and `kit/CRODOX_INTEGRATION.md` shows how Crodox generates them, guardrails included.
 
-Five tasks, one prompt each, run in both arms with GitHub Copilot in agent mode, three repetitions, 30 runs. Everything else is identical.
+Five tasks, one prompt each, run in all three arms with GitHub Copilot in agent mode, three repetitions, 45 runs. Everything else is identical. The guardrails are never written by hand: `kit/scripts/make_guardrails.py` generates them from `kit/tasks.json`, so arm B and arm C get word-for-word the same rules.
 
 ## Layout
 
 ```
 full-repo/                 Arm A, origin repository at the pinned commit (+ karma.headless.js)
-slices/T1-table-list/      Arm B for task T1 ... T5-dashboard/
+slices/T1-table-list/      Arm C for task T1 ... T5-dashboard/
 kit/tasks.json             task definitions, allowed files, spec paths
-kit/prompts/T1..T5.md      exact prompt text, paste verbatim in both arms
+kit/prompts/T1..T5.md      exact prompt text, paste verbatim in all arms
 kit/specs/*.bench.spec.ts  hidden acceptance tests, copied in only after a run
-kit/scripts/score_diff.py      diff precision for one run
+kit/scripts/make_guardrails.py  writes the guardrails of arm B or C into a folder (and removes them)
+kit/scripts/score_diff.py      diff precision for one run (ignores the guardrail files)
 kit/scripts/context_tokens.py  offered context per arm (static)
-kit/scripts/analyze.py         aggregates results.csv into summary.md and summary.png
+kit/scripts/analyze.py         aggregates results.csv into summary.md and summary.png, three arms
 kit/results/results_template.csv, COLUMNS.md (column reference)
 kit/reference/reference-solution.patch   a solution that passes all hidden specs; never in an arm during a run
 kit/DEMO_WALKTHROUGH.md    ten-minute live demo, step by step
@@ -67,20 +69,23 @@ These numbers describe what the agent can see, not what it reads. The measured c
 | Context tokens per session | VS Code: context window control in the chat input, session info | Explains the credits |
 | Tool calls, duration, references | VS Code: Agent Debug Logs summary, "Used N references" | How much the agent had to search |
 | Tests passed | Hidden spec per task | Did the agent do what was asked? |
-| Diff precision | `kit/scripts/score_diff.py` | Did the agent touch only files that belong to the task? |
+| Diff precision | `kit/scripts/score_diff.py` | Did the agent touch only files that belong to the task? In arm B this is also the guardrail compliance rate. |
 
 Precision index = mean of test pass rate and diff precision. It is the one number for a slide; both components are always reported next to it.
 
+The comparison that matters most is B against C: both have the same instructions, only C has the codebase physically reduced. The difference between them is the value of isolation over guidance.
+
 ## One run
 
-1. Reset. Arm A: `git checkout -- full-repo && git clean -fd full-repo`. Arm B: same for `slices/<task>`.
-2. Open the arm's folder as the VS Code workspace root (not this repository's root; the agent must not see the other arm or `kit/`).
-3. Copilot Chat, agent mode, same model in both arms, new chat. Record the model name.
-4. Paste `kit/prompts/<task>.md` verbatim. No follow-ups. Accept all edits.
-5. Record credits (hover), session tokens (context window control), tool calls and duration (Agent Debug Logs), references.
-6. `python3 kit/scripts/score_diff.py --task <task> --repo <arm folder>` from the repository root. Record `files_changed` and `files_in_scope`.
-7. Copy the hidden spec to `spec_target_path` inside the arm folder, run `./test.sh <arm folder>`, record `tests_passed`. Run `npx ng build` in the arm folder, record `build_ok`.
-8. Append one row to `kit/results/results.csv`.
+1. Reset. Arms A and B: `git checkout -- full-repo && git clean -fd full-repo`. Arm C: same for `slices/<task>`. `git clean` also removes guardrails from the previous run.
+2. Guardrails. Arm A: none. Arm B: `python3 kit/scripts/make_guardrails.py --task <task> --arm B --target full-repo`. Arm C: `python3 kit/scripts/make_guardrails.py --task <task> --arm C --target slices/<task>`.
+3. Open the arm's folder as the VS Code workspace root (not this repository's root; the agent must not see the other arms or `kit/`). In arm B, confirm that the Explorer shows only the task folder under `src/app`.
+4. Copilot Chat, agent mode, same model in all arms, new chat. Record the model name.
+5. Paste `kit/prompts/<task>.md` verbatim. No follow-ups. Accept all edits.
+6. Record credits (hover), session tokens (context window control), tool calls and duration (Agent Debug Logs), references.
+7. `python3 kit/scripts/score_diff.py --task <task> --repo <arm folder>` from the repository root. Record `files_changed` and `files_in_scope`.
+8. Copy the hidden spec to `spec_target_path` inside the arm folder, run `./test.sh <arm folder>`, record `tests_passed`. Run `npx ng build` in the arm folder, record `build_ok`.
+9. Append one row to `kit/results/results.csv` with `arm` set to `A_full_repo`, `B_full_repo_guardrails` or `C_isolation`.
 
 ## Analysis
 
@@ -88,12 +93,14 @@ Precision index = mean of test pass rate and diff precision. It is the one numbe
 python3 kit/scripts/analyze.py kit/results/results.csv --out kit/results/summary
 ```
 
-`summary.md` has the per-task table and the overall reduction; `summary.png` the three-panel chart.
+`summary.md` has the per-task table, the overall reduction of B and C against A, and the B-to-C difference; `summary.png` the three-panel chart with three bars per task.
 
 ## Rules that keep the comparison honest
 
-* Same model, same day, same VS Code and Copilot extension version for all 30 runs. Note the versions in the results file.
-* The prompt names the component but no file paths, so both arms have to locate the code.
-* Hidden specs, the reference solution and the other arm are never inside the agent's workspace.
+* Same model, same day, same VS Code and Copilot extension version for all 45 runs. Note the versions in the results file.
+* Arm B and arm C get identical instruction text, generated from the same source. Nobody tunes the wording per arm.
+* `files.exclude` hides files from the Explorer and from search; it does not prevent the agent from opening a file whose path it already knows. That is what arm B measures: how far guidance and visibility go without a structural boundary. Report it as such.
+* The prompt names the component but no file paths, so all arms have to locate the code.
+* Hidden specs, the reference solution and the other arms are never inside the agent's workspace.
 * Runs are not discarded. A run where the agent fails is a data point.
 * Report means and medians per task. Three runs per cell describe this repository and these tasks; they are not a general claim about all codebases.

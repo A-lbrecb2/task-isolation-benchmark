@@ -5,7 +5,7 @@
 | run_id | manual | Sequential, e.g. R001 |
 | date | manual | Date of the run, ISO (2026-09-18) |
 | task | tasks.json | T1 to T5 |
-| arm | tasks.json | A_full_repo or B_workbench (the slice) |
+| arm | tasks.json | A_full_repo, B_full_repo_guardrails or C_isolation |
 | repetition | manual | 1 to 3 |
 | model | VS Code chat model picker | exact model name |
 | credits_turn | VS Code: hover over the chat response | credits for the prompt |

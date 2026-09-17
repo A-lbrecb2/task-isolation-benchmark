@@ -1,4 +1,4 @@
-# benchmark-workbench-template
+# workbench-template
 
 Crodox template repository for the task-isolation benchmark. It is the workbench skeleton: a minimal
 Angular 14 host application with every runtime dependency the material-dashboard-angular2 components

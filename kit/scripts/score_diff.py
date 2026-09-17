@@ -75,6 +75,14 @@ def numstat(repo):
     return counts
 
 
+GUARDRAIL_FILES = (".github/copilot-instructions.md", ".vscode/settings.json")
+
+
+def is_guardrail(path):
+    """Files written by make_guardrails.py are part of the arm's setup, not of the agent's diff."""
+    return path in GUARDRAIL_FILES
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--task", required=True, help="task id, e.g. T1")
@@ -91,12 +99,12 @@ def main():
     allowed = set(task["allowed_files"])
     spec_path = task["spec_target_path"]
 
-    touched = {f for f in changed_files(args.repo) if f != spec_path}
+    touched = {f for f in changed_files(args.repo) if f != spec_path and not is_guardrail(f)}
     in_scope = {f for f in touched if f in allowed}
     out_scope = touched - in_scope
 
     lines = numstat(args.repo)
-    total_lines = sum(v for k, v in lines.items() if k != spec_path)
+    total_lines = sum(v for k, v in lines.items() if k != spec_path and not is_guardrail(k))
     out_lines = sum(v for k, v in lines.items() if k in out_scope)
 
     result = {
