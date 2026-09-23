@@ -104,8 +104,18 @@ def write_markdown(tasks, agg, path):
                          f"token reduction {pct(st.mean(o['red_t']))}, precision index {pct(st.mean(o['pi']))}.")
     b, c = overall[ARM_B], overall[ARM_C]
     if b["pi"] and c["pi"]:
-        lines.append(f"Isolation vs guardrails alone: credits {pct(st.mean(c['red_c']) - st.mean(b['red_c']))} points more reduction, "
-                     f"precision index {pct(st.mean(c['pi']) - st.mean(b['pi']))} points difference.")
+        # direct C-vs-B reduction per task (same instructions, only the codebase differs)
+        red_cb_c, red_cb_t = [], []
+        for t in tasks:
+            xb, xc = agg.get((t, ARM_B)), agg.get((t, ARM_C))
+            if xb and xc:
+                if xb["credits"]:
+                    red_cb_c.append(1 - xc["credits"] / xb["credits"])
+                if xb["tokens"]:
+                    red_cb_t.append(1 - xc["tokens"] / xb["tokens"])
+        if red_cb_c:
+            lines.append(f"Isolation vs guardrails alone (C relative to B, mean of task means): credits {pct(st.mean(red_cb_c))} less, "
+                         f"tokens {pct(st.mean(red_cb_t))} less, precision index {pct(st.mean(c['pi']) - st.mean(b['pi']))} points difference.")
     with open(path, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
     print("\n".join(lines))
