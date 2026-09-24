@@ -2,3 +2,6 @@ run_id,date,task,arm,repetition,model,credits_turn,credits_session,context_token
 R001,2026-09-23,T3,A_full_repo,1,Claude Sonnet 5 High 1M,8.6,8.6,36800,3,22,,3,3,2,2,1,round 2; no guardrails; MCP disabled; agent did not build or test
 R002,2026-09-23,T3,B_full_repo_guardrails,1,Claude Sonnet 5 High 1M,33.0,33.0,57100,16,224,,3,3,2,2,1,round 2; instructions + files.exclude; MCP disabled; agent ran full suite and investigated 3 upstream failures
 R003,2026-09-23,T3,C_isolation,1,Claude Sonnet 5 High 1M,10.5,10.5,37300,,,,3,3,2,2,1,crodox; workbench t3-footer-crodox; guardrailScope patch; MCP disabled; agent ran build + test (2 specs)
+R004,2026-09-24,T1,A_full_repo,1,Claude Sonnet 5 High 1M,21.1,21.1,49800,14,54,,4,4,2,2,1,no guardrails; MCP disabled; agent did not run tests; 215 lines changed
+R005,2026-09-24,T1,B_full_repo_guardrails,1,Claude Sonnet 5 High 1M,40.1,40.1,61600,16,218,,4,4,4,4,1,instructions + files.exclude; MCP disabled; agent ran full suite; created employee.ts and edited spec; 210 lines changed
+R006,2026-09-24,T1,C_isolation,1,Claude Sonnet 5 High 1M,19.4,19.4,43200,18,119,,4,4,2,2,1,crodox; workbench t1-table-list-crodox; MCP disabled; agent ran tests (2 specs)
