@@ -7,36 +7,18 @@ declare var $: any;
 })
 export class NotificationsComponent implements OnInit {
 
-  lastNotification: { from: string; align: string; type: string; message: string } | null = null;
-
   constructor() { }
-
-  pickType(index: number): string {
-      switch (index) {
-          case 1: return 'info';
-          case 2: return 'success';
-          case 3: return 'warning';
-          case 4: return 'danger';
-          default: return 'info';
-      }
-  }
-
-  showNotification(from: string, align: string, message?: string): void {
-      const resolvedMessage = message === undefined
-          ? "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
-          : message;
+  showNotification(from, align){
+      const type = ['','info','success','warning','danger'];
 
       const color = Math.floor((Math.random() * 4) + 1);
-      const type = this.pickType(color);
-
-      this.lastNotification = { from, align, type, message: resolvedMessage };
 
       $.notify({
           icon: "notifications",
-          message: resolvedMessage
+          message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
 
       },{
-          type: type,
+          type: type[color],
           timer: 4000,
           placement: {
               from: from,
