@@ -54,6 +54,7 @@
         </li>
     </ul>
   </div>
+    <input type="text" class="form-control" placeholder="Filter menu..." (input)="filterMenu($event.target.value)">
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">

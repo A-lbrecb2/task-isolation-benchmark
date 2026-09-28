@@ -25,6 +25,7 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  activeFilter: string = '';
 
   constructor() { }
 
@@ -37,4 +38,14 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+
+  filterMenu(query: string): void {
+    this.activeFilter = (query || '').trim();
+    if (!this.activeFilter) {
+      this.menuItems = ROUTES.filter(menuItem => menuItem);
+      return;
+    }
+    const lowerFilter = this.activeFilter.toLowerCase();
+    this.menuItems = ROUTES.filter(menuItem => menuItem.title.toLowerCase().includes(lowerFilter));
+  }
 }
