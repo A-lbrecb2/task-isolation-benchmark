@@ -1,0 +1,4 @@
+[33md89782f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Revert "T6 navbar task, policy guardrails, SBOM tooling, template policy patch"
+[33m363f21d[m Revert "policy block, dependencyAllowlist patch, sbom baseline in devcontainer"
+[33macb32f7[m policy block, dependencyAllowlist patch, sbom baseline in devcontainer
+[33mf5be5fd[m T6 navbar task, policy guardrails, SBOM tooling, template policy patch

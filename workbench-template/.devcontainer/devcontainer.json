@@ -1,11 +1,17 @@
 {
   "name": "benchmark-workbench",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y chromium && npm install --legacy-peer-deps",
-  "remoteEnv": { "CHROME_BIN": "/usr/bin/chromium" },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y chromium && npm install --legacy-peer-deps && mkdir -p .guardrails && (npm sbom --sbom-format cyclonedx --omit dev > .guardrails/sbom.baseline.json || echo 'sbom baseline skipped')",
+  "remoteEnv": {
+    "CHROME_BIN": "/usr/bin/chromium"
+  },
   "customizations": {
     "vscode": {
-      "extensions": ["GitHub.copilot", "GitHub.copilot-chat", "Angular.ng-template"]
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "Angular.ng-template"
+      ]
     }
   }
 }

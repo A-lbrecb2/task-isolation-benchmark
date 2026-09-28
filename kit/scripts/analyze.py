@@ -35,6 +35,9 @@ def load(path):
         for r in csv.DictReader(fh):
             if not r.get("task"):
                 continue
+            if (r.get("tests_passed") or "").strip() == "":
+                # evaluation not done yet (spec, diff, build pending): leave the row out
+                continue
             tests_total = float(r["tests_total"] or 0)
             files_changed = float(r["files_changed"] or 0)
             rows.append({

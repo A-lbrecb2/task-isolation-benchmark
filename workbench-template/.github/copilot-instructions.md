@@ -6,3 +6,11 @@ Work on that component. Do not change `src/app/app.module.ts`, `src/app/app.comp
 reintegration. Do not add dependencies.
 
 ## Scope
+
+## Policy (checked by kit/scripts/check_policy.py after the run)
+- Do not add, remove or upgrade dependencies. `package.json` and the lock file stay as they are; `.guardrails/sbom.baseline.json` is the runtime SBOM this run is measured against.
+- Do not use `eval`, `Function(...)`, `innerHTML`, `document.write`, `http://` URLs, or hard-coded secrets and tokens.
+- Do not introduce `any` in code you write; keep the existing TypeScript strictness.
+- Every third-party package in the runtime tree stays under one of these licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, 0BSD.
+- If a rule blocks the task, stop and say so instead of working around it.
+- Import only from `@angular/*`, `rxjs` and the modules listed below inside the files you edit:

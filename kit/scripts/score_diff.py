@@ -76,11 +76,12 @@ def numstat(repo):
 
 
 GUARDRAIL_FILES = (".github/copilot-instructions.md", ".vscode/settings.json")
+GUARDRAIL_DIRS = (".guardrails/",)
 
 
 def is_guardrail(path):
     """Files written by make_guardrails.py are part of the arm's setup, not of the agent's diff."""
-    return path in GUARDRAIL_FILES
+    return path in GUARDRAIL_FILES or path.startswith(GUARDRAIL_DIRS)
 
 
 def main():

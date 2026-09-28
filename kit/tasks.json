@@ -88,6 +88,32 @@
         "src/app/dashboard/dashboard.component.spec.ts",
         "src/app/dashboard/chart-data.ts"
       ]
+    },
+    {
+      "id": "T6",
+      "title": "Breadcrumb and title resolution for the navbar",
+      "component": "NavbarComponent",
+      "slice_root": "src/app/components/navbar",
+      "slice_dir": "T6-navbar",
+      "prompt_file": "prompts/T6.md",
+      "spec_file": "specs/navbar.bench.spec.ts",
+      "spec_target_path": "src/app/components/navbar/navbar.bench.spec.ts",
+      "allowed_files": [
+        "src/app/components/navbar/navbar.component.ts",
+        "src/app/components/navbar/navbar.component.html",
+        "src/app/components/navbar/navbar.component.spec.ts"
+      ],
+      "dependencies_read_only": [
+        "src/app/components/sidebar/sidebar.component.ts"
+      ],
+      "allowed_imports": [
+        "@angular/core",
+        "@angular/common",
+        "@angular/router",
+        "../sidebar/sidebar.component"
+      ],
+      "tests_total": 4,
+      "notes": "First task whose component imports from another component (ROUTES from the sidebar). The sidebar is in the workbench as a dependency but not in the allowed list."
     }
   ],
   "slices": {

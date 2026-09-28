@@ -4,3 +4,5 @@ dist/
 coverage/
 *.log
 kit/results/summary.*
+node_modules
+__pycache__/

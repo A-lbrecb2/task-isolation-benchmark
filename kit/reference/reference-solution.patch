@@ -498,3 +498,72 @@ index 64b6b4f..f913614 100644
 +    return this.employees.reduce((sum, e) => sum + e.salary, 0);
 +  }
  }
+diff --git a/src/app/components/navbar/navbar.component.html b/src/app/components/navbar/navbar.component.html
+index a38a6c7..59f7262 100644
+--- a/src/app/components/navbar/navbar.component.html
++++ b/src/app/components/navbar/navbar.component.html
+@@ -1,9 +1,9 @@
+ <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+     <div class="container-fluid">
+         <div class="navbar-wrapper">
+-          <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
++          <a class="navbar-brand" href="javascript:void(0)">{{ breadcrumb }}</a>
+         </div>
+-        <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
++        <button mat-raised-button class="navbar-toggler" type="button" [class.toggled]="sidebarVisible" (click)="sidebarToggle()">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="navbar-toggler-icon icon-bar"></span>
+             <span class="navbar-toggler-icon icon-bar"></span>
+diff --git a/src/app/components/navbar/navbar.component.ts b/src/app/components/navbar/navbar.component.ts
+index bccc885..69c7033 100644
+--- a/src/app/components/navbar/navbar.component.ts
++++ b/src/app/components/navbar/navbar.component.ts
+@@ -1,4 +1,4 @@
+-import { Component, OnInit, ElementRef } from '@angular/core';
++import { Component, OnInit, ElementRef, Input } from '@angular/core';
+ import { ROUTES } from '../sidebar/sidebar.component';
+ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+ import { Router } from '@angular/router';
+@@ -13,7 +13,8 @@ export class NavbarComponent implements OnInit {
+     location: Location;
+       mobile_menu_visible: any = 0;
+     private toggleButton: any;
+-    private sidebarVisible: boolean;
++    sidebarVisible: boolean;
++    @Input() brandTitle: string = 'Material Dashboard';
+ 
+     constructor(location: Location,  private element: ElementRef, private router: Router) {
+       this.location = location;
+@@ -109,17 +110,21 @@ export class NavbarComponent implements OnInit {
+         }
+     };
+ 
++    resolveTitle(path: string): string {
++      let p = path || '';
++      if (p.charAt(0) === '#') { p = p.slice(1); }
++      const q = p.indexOf('?'); if (q >= 0) { p = p.slice(0, q); }
++      const h = p.indexOf('#'); if (h >= 0) { p = p.slice(0, h); }
++      if (p.length > 1 && p.endsWith('/')) { p = p.slice(0, -1); }
++      const hit = ROUTES.find(r => r.path === p);
++      return hit ? hit.title : 'Dashboard';
++    }
++
+     getTitle(){
+-      var titlee = this.location.prepareExternalUrl(this.location.path());
+-      if(titlee.charAt(0) === '#'){
+-          titlee = titlee.slice( 1 );
+-      }
+-
+-      for(var item = 0; item < this.listTitles.length; item++){
+-          if(this.listTitles[item].path === titlee){
+-              return this.listTitles[item].title;
+-          }
+-      }
+-      return 'Dashboard';
++      return this.resolveTitle(this.location.prepareExternalUrl(this.location.path()));
++    }
++
++    get breadcrumb(): string {
++      return `${this.brandTitle} › ${this.getTitle()}`;
+     }
+ }
