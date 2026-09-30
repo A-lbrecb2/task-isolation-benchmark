@@ -17,6 +17,11 @@ types scope rules by hand:
 Arm A gets nothing. Arm B (full repository plus guardrails) gets both files. Arm C
 (isolation) gets the instructions file only; there is nothing left to hide.
 
+Arm A, second stage: after the agent has finished the task prompt, the Verify block of the
+instructions is sent as a second prompt, word for word (`--verify-prompt` prints it for the
+task). Credits of that second turn are recorded as credits_verify. This shows what it costs to
+add verification afterwards instead of giving the guardrails up front.
+
 With --policy, a third layer is added to the instructions (arms B and C alike) and made
 checkable by kit/scripts/check_policy.py:
 
@@ -54,7 +59,9 @@ You are working on exactly one task in this repository. Stay inside its scope.
 - Do not add dependencies.
 - Keep existing CSS classes and the existing public API of the component unless the task says otherwise.
 
-## Verify
+{verify}"""
+
+VERIFY = """## Verify
 - The code must compile: `npx ng build`.
 - The existing spec in `{scope_dir}` must still pass: `npx ng test --watch=false --karma-config karma.headless.js`.
 - When you are done, list the files you changed.
@@ -88,7 +95,7 @@ def write_instructions(target, task, policy=False):
     text = INSTRUCTIONS.format(
         title=task["title"], task_id=task["id"], component=task["component"],
         allowed="\n".join(f"- `{f}`" for f in task["allowed_files"]),
-        scope_dir=task["slice_root"],
+        scope_dir=task["slice_root"], verify=VERIFY.format(scope_dir=task["slice_root"]),
     )
     if task.get("dependencies_read_only"):
         text += "\n## Files you may read but must not change\n" + "\n".join(f"- `{f}`" for f in task["dependencies_read_only"]) + "\n"
@@ -208,11 +215,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--task", required=True)
     ap.add_argument("--arm", choices=["A", "B", "C"], help="A: none, B: instructions + workspace restriction, C: instructions only")
-    ap.add_argument("--target", required=True, help="folder the agent will open as workspace root")
+    ap.add_argument("--target", default=".", help="folder the agent will open as workspace root")
     ap.add_argument("--tasks-json", default=os.path.join(os.path.dirname(__file__), "..", "tasks.json"))
     ap.add_argument("--remove", action="store_true")
     ap.add_argument("--policy", action="store_true", help="add the Policy section and write .guardrails/sbom.baseline.json (arms B and C)")
+    ap.add_argument("--verify-prompt", action="store_true", help="print the Verify block for the task (arm A's second prompt) and exit")
     args = ap.parse_args()
+
+    if args.verify_prompt:
+        task = load_task(args.tasks_json, args.task)
+        print(VERIFY.format(scope_dir=task["slice_root"]).strip())
+        return
 
     if args.remove:
         print("removed:", ", ".join(remove(args.target)) or "nothing")

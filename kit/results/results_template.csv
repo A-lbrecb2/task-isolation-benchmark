@@ -1,1 +1,1 @@
-run_id,date,task,arm,repetition,model,credits_turn,credits_session,context_tokens_session,tool_calls,duration_s,references_count,tests_total,tests_passed,files_changed,files_in_scope,build_ok,notes,policy_violations,sbom_components
+run_id,date,task,arm,repetition,model,credits_turn,credits_session,context_tokens_session,tool_calls,duration_s,references_count,tests_total,tests_passed,files_changed,files_in_scope,build_ok,notes,policy_violations,sbom_components,credits_verify

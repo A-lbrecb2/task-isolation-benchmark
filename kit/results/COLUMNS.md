@@ -21,4 +21,5 @@
 | build_ok | ng build | 1 if the build succeeds, else 0 |
 | policy_violations | check_policy.py | number of policy violations (scope, readonly, deps, sbom, imports, patterns, any, licenses); empty for runs before the policy layer existed |
 | sbom_components | check_policy.py / sbom.py | resolved runtime components in the arm folder after the run |
+| credits_verify | VS Code, Session Info before and after the second prompt | arm A only: credits of the second prompt (the Verify block, word for word the B/C guardrail text) = session cost after minus session cost before. Empty for B and C, whose verification is part of the single run |
 | notes | manual | anything unusual, e.g. "agent edited navbar.component.ts" |

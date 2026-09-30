@@ -44,6 +44,7 @@ def load(path):
                 "task": r["task"].strip(),
                 "arm": ARM_ALIASES.get(r["arm"].strip(), r["arm"].strip()),
                 "credits": float(r["credits_turn"] or 0),
+                "credits_verify": float((r.get("credits_verify") or "0") or 0),
                 "tokens": float(r["context_tokens_session"] or 0),
                 "pass_rate": float(r["tests_passed"] or 0) / tests_total if tests_total else 0.0,
                 "diff_prec": float(r["files_in_scope"] or 0) / files_changed if files_changed else 0.0,
@@ -67,6 +68,8 @@ def aggregate(rows):
                 "n": len(rs),
                 "credits": st.mean(r["credits"] for r in rs),
                 "credits_median": st.median(r["credits"] for r in rs),
+                "credits_verify": st.mean(r["credits_verify"] for r in rs),
+                "credits_verify_n": sum(1 for r in rs if r["credits_verify"] > 0),
                 "tokens": st.mean(r["tokens"] for r in rs),
                 "pass_rate": st.mean(r["pass_rate"] for r in rs),
                 "diff_prec": st.mean(r["diff_prec"] for r in rs),
@@ -81,8 +84,8 @@ def pct(x):
 
 
 def write_markdown(tasks, agg, path):
-    lines = ["| Task | Arm | Runs | Credits | Credit reduction vs A | Tokens | Token reduction vs A | Tests | Diff prec. | Precision index |",
-             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
+    lines = ["| Task | Arm | Runs | Credits | + verify afterwards (A) | Credit reduction vs A | Tokens | Token reduction vs A | Tests | Diff prec. | Precision index |",
+             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     overall = {arm: {"red_c": [], "red_t": [], "pi": []} for arm in ARMS}
     for t in tasks:
         a = agg.get((t, ARM_A))
@@ -93,7 +96,8 @@ def write_markdown(tasks, agg, path):
             rc = 1 - x["credits"] / a["credits"] if a and a["credits"] else 0
             rt = 1 - x["tokens"] / a["tokens"] if a and a["tokens"] else 0
             overall[arm]["red_c"].append(rc); overall[arm]["red_t"].append(rt); overall[arm]["pi"].append(x["precision_index"])
-            lines.append(f"| {t} | {LABEL[arm]} | {x['n']} | {x['credits']:.2f} | {pct(rc) if arm != ARM_A else '-'} | "
+            ver = f"+{x['credits_verify']:.1f} = {x['credits'] + x['credits_verify']:.1f}" if arm == ARM_A and x.get("credits_verify_n") else "-"
+            lines.append(f"| {t} | {LABEL[arm]} | {x['n']} | {x['credits']:.2f} | {ver} | {pct(rc) if arm != ARM_A else '-'} | "
                          f"{x['tokens']:.0f} | {pct(rt) if arm != ARM_A else '-'} | {pct(x['pass_rate'])} | {pct(x['diff_prec'])} | {pct(x['precision_index'])} |")
     lines.append("")
     for arm in ARMS:
@@ -119,6 +123,17 @@ def write_markdown(tasks, agg, path):
         if red_cb_c:
             lines.append(f"Isolation vs guardrails alone (C relative to B, mean of task means): credits {pct(st.mean(red_cb_c))} less, "
                          f"tokens {pct(st.mean(red_cb_t))} less, precision index {pct(st.mean(c['pi']) - st.mean(b['pi']))} points difference.")
+    two = [(t, agg[(t, ARM_A)]) for t in tasks if (t, ARM_A) in agg and agg[(t, ARM_A)].get("credits_verify_n")]
+    if two:
+        parts = []
+        for t, a in two:
+            tot = a["credits"] + a["credits_verify"]
+            b = agg.get((t, ARM_B)); c = agg.get((t, ARM_C))
+            vs = []
+            if b: vs.append(f"B {b['credits']:.1f}")
+            if c: vs.append(f"C {c['credits']:.1f}")
+            parts.append(f"{t}: A task {a['credits']:.1f} + verify afterwards {a['credits_verify']:.1f} = {tot:.1f} (vs {', '.join(vs)})")
+        lines.append("Two-stage arm A (guardrails added after the fact as a second prompt): " + "; ".join(parts) + ".")
     with open(path, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
     print("\n".join(lines))
@@ -140,8 +155,15 @@ def draw(tasks, agg, path):
             vals = [agg.get((t, arm), {}).get(key, 0) for t in tasks]
             offset = (i - (len(present) - 1) / 2) * (w + 0.02)
             bars = ax.bar([xi + offset for xi in x], vals, width=w, color=COLOR[arm], label=LABEL[arm], linewidth=0)
-            for b, v in zip(bars, vals):
-                ax.text(b.get_x() + b.get_width() / 2, b.get_height(), pct(v) if is_pct else f"{v:.2f}",
+            tops = list(vals)
+            if key == "credits" and arm == ARM_A:
+                ver = [agg.get((t, arm), {}).get("credits_verify", 0) for t in tasks]
+                if any(ver):
+                    ax.bar([xi + offset for xi in x], ver, bottom=vals, width=w, color="white", edgecolor=COLOR[arm],
+                           hatch="////", linewidth=0.8, label="A: verify added afterwards (2nd prompt)")
+                    tops = [v + e for v, e in zip(vals, ver)]
+            for b, v, tp in zip(bars, vals, tops):
+                ax.text(b.get_x() + b.get_width() / 2, tp, pct(v) if is_pct else (f"{tp:.1f}" if tp != v else f"{v:.2f}"),
                         ha="center", va="bottom", fontsize=7, color="#333333")
         ax.set_title(title, fontsize=11, loc="left", color="#111111")
         ax.set_xticks(list(x)); ax.set_xticklabels(tasks, fontsize=9)
@@ -150,13 +172,13 @@ def draw(tasks, agg, path):
             ax.set_ylim(0, 1.12)
             ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_yticklabels(["0%", "25%", "50%", "75%", "100%"])
         else:
-            ax.set_ylim(0, max([agg[k]["credits"] for k in agg] + [1]) * 1.18)
+            ax.set_ylim(0, max([agg[k]["credits"] + agg[k].get("credits_verify", 0) for k in agg] + [1]) * 1.18)
         for s in ("top", "right"):
             ax.spines[s].set_visible(False)
         for s in ("left", "bottom"):
             ax.spines[s].set_color("#cccccc")
         ax.yaxis.grid(True, color="#e6e6e6", linewidth=0.8); ax.set_axisbelow(True)
-    axes[0].legend(frameon=False, fontsize=9, loc="upper left", bbox_to_anchor=(0, 1.22), ncol=3)
+    axes[0].legend(frameon=False, fontsize=8, loc="upper left", bbox_to_anchor=(0, 1.26), ncol=2)
     fig.suptitle("Full repository vs. guardrails vs. isolation, GitHub Copilot agent mode", x=0.01, ha="left", fontsize=12, color="#111111", y=1.02)
     fig.tight_layout()
     fig.savefig(path, bbox_inches="tight", facecolor="white")
