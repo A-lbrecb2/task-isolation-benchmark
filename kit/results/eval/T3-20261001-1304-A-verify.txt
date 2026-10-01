@@ -1,0 +1,166 @@
+ÔùÅ Build Angular app (shell)                                                                   1m 21s
+  Ôöé cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  Ôöö 27 linesÔÇª
+
+Build succeeds. Now running the test suite.
+
+Ô£ù Run Angular tests headless (shell)                                                             20s
+  Ôöé cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  Ôöé karma.headless.js 2>&1 | Select-Object -Last 100
+  Ôöö at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (2 FAILED) (0 secs / 0.18 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    ReferenceError: google is not defined
+    at MapsComponent.call [as ngOnInit] (src/app/maps/maps.component.ts:22:20)
+    at callHook (node_modules/@angular/core/fesm2015/core.mjs:2491:22)
+    at callHooks (node_modules/@angular/core/fesm2015/core.mjs:2460:17)
+    at executeInitAndCheckHooks (node_modules/@angular/core/fesm2015/core.mjs:2411:9)
+    at refreshView (node_modules/@angular/core/fesm2015/core.mjs:12013:21)
+    at detectChangesInternal (node_modules/@angular/core/fesm2015/core.mjs:13216:9)
+    at RootViewRef.detectChanges (node_modules/@angular/core/fesm2015/core.mjs:13728:9)
+    at ComponentFixture._tick (node_modules/@angular/core/fesm2015/testing.mjs:141:32)
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.185 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    ReferenceError: google is not defined
+    at MapsComponent.call [as ngOnInit] (src/app/maps/maps.component.ts:22:20)
+    at callHook (node_modules/@angular/core/fesm2015/core.mjs:2491:22)
+    at callHooks (node_modules/@angular/core/fesm2015/core.mjs:2460:17)
+    at executeInitAndCheckHooks (node_modules/@angular/core/fesm2015/core.mjs:2411:9)
+    at refreshView (node_modules/@angular/core/fesm2015/core.mjs:12013:21)
+    at detectChangesInternal (node_modules/@angular/core/fesm2015/core.mjs:13216:9)
+    at RootViewRef.detectChanges (node_modules/@angular/core/fesm2015/core.mjs:13728:9)
+    at ComponentFixture._tick (node_modules/@angular/core/fesm2015/testing.mjs:141:32)
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.202 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.228 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.242 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.276 secs / 0.242 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    Ô£ö Browser application bundle generation complete.
+    Ô£ö Browser application bundle generation complete.
+    Failed with exit code 1
+
+Ô£ù Read shell output Waiting up to 3 seconds for command output
+  Ôöö
+    Failed with exit code 1
+
+ÔùÅ Run only footer component spec (shell)                                                         20s
+  Ôöé cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  Ôöé karma.headless.js --include='**/footer.component.spec.ts' 2>&1 | Select-String -Pattern
+  Ôöé "Footer|SUCCESS|FAILED|TOTAL"
+  Ôöö 5 linesÔÇª
+
+Build passes, and `FooterComponent` spec passes (1/1 SUCCESS). The 3 failures in the full suite (`AppComponent`, `MapsComponent`, `SidebarComponent`) are pre-existing and unrelated to this change (undefined `google`, missing `routerLink` test module setup).
+
+**Files changed:**
+- `src\app\components\footer\footer.component.ts`
+- `src\app\components\footer\footer.component.html`
+
+
+
+Changes    +11 -4
+AI Credits 13.9 (2m 46s)
+Tokens     Ôåæ 317.2k (292.8k cached, 24.4k written) ÔÇó Ôåô 1.9k (87 reasoning)
+Resume     copilot --resume=035fbea3-7f1e-4001-939f-c02f1957502b
+

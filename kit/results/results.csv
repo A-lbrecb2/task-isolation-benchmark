@@ -14,3 +14,6 @@ R011,2026-09-24,T2,B_full_repo_guardrails,1,Claude Sonnet 5 High 1M,19.0,19.0,48
 R013,2026-09-24,T4,A_full_repo,1,Claude Sonnet 5 High 1M,10.9,33.9,,6,20,,4,,,,,no guardrails; MCP disabled; two-stage run: task prompt then the Verify block as second prompt (9 steps 1m43s); credits_turn from hover; EVALUATION PENDING,,,23.0
 R014,2026-09-24,T4,B_full_repo_guardrails,1,Claude Sonnet 5 High 1M,13.1,13.1,45900,8,123,,4,,,,,instructions + files.exclude; MCP disabled; build OK; EVALUATION PENDING,,,
 R015,2026-09-24,T4,C_isolation,1,Claude Sonnet 5 High 1M,9.4,9.4,32800,8,99,,4,,,,,crodox; workbench t4-notifications-crodox; MCP disabled; agent ran tests; EVALUATION PENDING,,,
+R016,2026-10-01,T3,A_full_repo,,claude-sonnet-5 (Copilot CLI),7.93,12.93,171200,6,17,,3,3,2,2,1,copilot cli; two-stage; verify footer 12.93 credits 59 s 3 steps (stored as 5 after subtracting the task turn); TOTAL: 3 FAILED; 15 SUCCESS,0,265,5
+R017,2026-10-01,T3,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),11.82,11.82,221200,8,121,,3,3,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 15 SUCCESS,0,265,
+R018,2026-10-01,T3,C_isolation,,claude-sonnet-5 (Copilot CLI),9.18,9.18,204900,7,128,,3,3,2,2,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T3; TOTAL: 5 SUCCESS,0,17,

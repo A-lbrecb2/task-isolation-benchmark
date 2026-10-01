@@ -1,0 +1,27 @@
+/ Search (glob)
+  │ "**/footer*.component.*"
+  └ 4 files found
+
+● Read footer.component.ts
+  │ src\app\components\footer\footer.component.ts
+  └ 16 lines read
+
+● Read footer.component.html
+  │ src\app\components\footer\footer.component.html
+  └ 33 lines read
+
+● Edit footer.component.ts +9 -2
+  └ src\app\components\footer\footer.component.ts
+
+● Edit footer.component.html +2 -2
+  └ src\app\components\footer\footer.component.html
+
+Done. `FooterComponent` now has configurable `companyName`/`companyUrl` `@Input()`s (defaults preserved) and a `copyrightYear` getter; the template uses these instead of hard-coded values and the `date` pipe.
+
+
+
+Changes    +11 -4
+AI Credits 7.2 (16s)
+Tokens     ↑ 142.5k (128.0k cached, 14.5k written) • ↓ 1.0k (11 reasoning)
+Resume     copilot --resume=5d19555d-2671-4ef5-bc50-c0309e9c9d31
+

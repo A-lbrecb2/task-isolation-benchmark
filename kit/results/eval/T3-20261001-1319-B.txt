@@ -1,0 +1,244 @@
+● Read footer.component.ts
+  │ src\app\components\footer\footer.component.ts
+  └ 16 lines read
+
+● Read footer.component.html
+  │ src\app\components\footer\footer.component.html
+  └ 33 lines read
+
+● Edit footer.component.ts +9 -2
+  └ src\app\components\footer\footer.component.ts
+
+● Edit footer.component.html +2 -2
+  └ src\app\components\footer\footer.component.html
+
+Now let's check the spec file and run build/tests.
+
+● Read footer.component.spec.ts
+  │ src\app\components\footer\footer.component.spec.ts
+  └ 25 lines read
+
+Spec is fine as-is. Now build and test.
+
+● Build Angular app (shell)                                                                    1m 3s
+  │ cd C:\Crodox\armB-full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeds. Now run the tests.
+
+✗ Run Angular tests headless (shell)                                                             18s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 80
+  └ 2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.161 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (3 FAILED) (0 secs / 0.199 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.212 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (3 FAILED) (0 secs / 0.224 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.234 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.241 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.267 secs)
+    ERROR: 'NG0304: 'app-sidebar' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-sidebar' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-sidebar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.267 secs)
+    ERROR: 'NG0304: 'app-sidebar' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-sidebar' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-sidebar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'app-navbar' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-navbar' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.267 secs)
+    ERROR: 'NG0304: 'app-navbar' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-navbar' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.267 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.267 secs)
+    ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.289 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.348 secs / 0.289 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+✗ Filter test output for Footer and failures (shell)                                             11s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-String -Pattern "Footer|FAILED"
+  └ Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 3 of 15 (1 FAILED) (0 secs / 0.147 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 4 of 15 (1 FAILED) (0 secs / 0.155 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 5 of 15 (1 FAILED) (0 secs / 0.168 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.176 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.209 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.209 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.209 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is
+    declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component
+    to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.209 secs)
+    ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is
+    declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component
+    to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.238 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.251 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.251 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.262 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.262 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (2 FAILED) (0 secs / 0.273 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (2 FAILED) (0 secs / 0.273 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.277 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.293 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.301 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.318 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.37 secs / 0.318 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    Failed with exit code 1
+
+The 3 failures (MapsComponent, AppComponent) are pre-existing and unrelated to FooterComponent — FooterComponent's spec passed. Build succeeds too.
+
+**Changed files:**
+- `src/app/components/footer/footer.component.ts` — added `companyName`/`companyUrl` `@Input()`s with defaults, and `copyrightYear` getter.
+- `src/app/components/footer/footer.component.html` — copyright line now uses `companyName`, `companyUrl`, `copyrightYear`; removed `date` pipe.
+
+No other files touched. Build passes; footer spec passes (pre-existing unrelated failures in Maps/App components).
+
+
+
+Changes    +11 -4
+AI Credits 11.82 (2m 1s)
+Tokens     ↑ 221.2k (197.8k cached, 23.5k written) • ↓ 2.0k (306 reasoning)
+Resume     copilot --resume=76ca03ec-e968-4725-8191-75211ed9a774
+

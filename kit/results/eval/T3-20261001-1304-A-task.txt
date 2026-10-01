@@ -1,0 +1,27 @@
+/ Search (grep)
+  Ôöé "footer"
+  Ôöö 24 files found
+
+ÔùÅ Read footer.component.ts
+  Ôöé src\app\components\footer\footer.component.ts
+  Ôöö 16 lines read
+
+ÔùÅ Read footer.component.html
+  Ôöé src\app\components\footer\footer.component.html
+  Ôöö 33 lines read
+
+ÔùÅ Edit footer.component.ts +9 -2
+  Ôöö src\app\components\footer\footer.component.ts
+
+ÔùÅ Edit footer.component.html +2 -2
+  Ôöö src\app\components\footer\footer.component.html
+
+Done. `FooterComponent` now has `@Input() companyName` and `@Input() companyUrl` with the specified defaults, a `copyrightYear` getter derived from `test`, and the template uses them in the copyright line instead of hard-coded values/the `date` pipe.
+
+
+
+Changes    +11 -4
+AI Credits 7.61 (19s)
+Tokens     Ôåæ 146.5k (131.0k cached, 15.5k written) ÔÇó Ôåô 1.1k (11 reasoning)
+Resume     copilot --resume=035fbea3-7f1e-4001-939f-c02f1957502b
+
