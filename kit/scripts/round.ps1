@@ -77,7 +77,7 @@ function Invoke-Copilot($repo, $promptFile, $out, $resume) {
   $res = [regex]::Match($text, '--resume=([0-9a-f-]+)')
   [pscustomobject]@{
     credits  = if ($m.Success) { [double]::Parse($m.Groups[1].Value, $inv) } else { $null }
-    seconds  = if ($m.Success) { (if ($m.Groups[2].Success) { 60 * [int]$m.Groups[2].Value } else { 0 }) + [int]$m.Groups[3].Value } else { $wall }
+    seconds  = if ($m.Success) { $(if ($m.Groups[2].Success) { 60 * [int]$m.Groups[2].Value } else { 0 }) + [int]$m.Groups[3].Value } else { $wall }
     tokens_k = if ($tok.Success) { [double]::Parse($tok.Groups[1].Value, $inv) } else { $null }
     added    = if ($chg.Success) { [int]$chg.Groups[1].Value } else { $null }
     removed  = if ($chg.Success) { [int]$chg.Groups[2].Value } else { $null }
