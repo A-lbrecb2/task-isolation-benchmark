@@ -1,0 +1,44 @@
+● List directory src\app\notifications
+  └ 4 files found
+
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 42 lines read
+
+● Read notifications.component.html
+  │ src\app\notifications\notifications.component.html
+  └ 123 lines read
+
+Template is fine as-is (calls with 2 args work with optional message). Now update the component.
+
+● Edit notifications.component.ts +19 -4
+  └ src\app\notifications\notifications.component.ts
+
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 57 lines read
+
+Looks good. Now let's build and test.
+
+● Run ng build (shell)                                                                        1m 21s
+  │ cd C:\Crodox\_wb\T4; npx ng build 2>&1 | Select-Object -Last 40
+  └ 19 lines…
+
+Build succeeded. Now run tests.
+
+● Run karma tests headless (shell)                                                               34s
+  │ cd C:\Crodox\_wb\T4; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 60
+  └ 22 lines…
+
+All tests pass (2/2 SUCCESS), build succeeds. The errors about `app-notifications` are pre-existing AppComponent warnings, unrelated to my change.
+
+**Changed file:** `src\app\notifications\notifications.component.ts`
+
+
+
+Changes    +19 -4
+AI Credits 10.72 (2m 18s)
+Tokens     ↑ 247.7k (228.3k cached, 19.4k written) • ↓ 1.3k (12 reasoning)
+Resume     copilot --resume=e46c7da0-e0d7-4b57-9804-a9f9919ff748
+

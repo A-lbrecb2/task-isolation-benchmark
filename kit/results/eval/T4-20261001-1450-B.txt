@@ -1,0 +1,383 @@
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 42 lines read
+
+● Edit notifications.component.ts +26 -4
+  └ src\app\notifications\notifications.component.ts
+
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 64 lines read
+
+Now let's build and test.
+
+● Build Angular app (shell)                                                                      16s
+  │ cd C:\Crodox\armB-full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build passes. Now run tests.
+
+✗ Run notifications spec tests (shell)                                                           12s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 80
+  └ ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.204 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.204 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.241 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.287 secs / 0.241 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+✗ Check which specs failed (shell)                                                               12s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-String "FAILED" -Context 2,0
+  └ Chrome Headless 154.0.0.0 (Windows 10): Executed 4 of 15 SUCCESS (0 secs / 0.099 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 5 of 15 SUCCESS (0 secs / 0.106 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (1 FAILED) (0 secs / 0.166 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (1 FAILED) (0 secs / 0.175 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (1 FAILED) (0 secs / 0.183 secs)
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule
+    where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.202 secs)
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of
+    an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.23 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (1 FAILED) (0 secs / 0.235 secs)
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (1 FAILED) (0 secs / 0.235 secs)
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (1 FAILED) (0 secs / 0.24 secs)
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (1 FAILED) (0 secs / 0.24 secs)
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (2 FAILED) (0 secs / 0.245 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (2 FAILED) (0 secs / 0.245 secs)
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is
+    declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this
+    component to suppress this message.'
+    > Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    >       Failed: Cannot read properties of null (reading 'textContent')
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.255 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    >       Failed: Cannot read properties of null (reading 'textContent')
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.259 secs)
+    > Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.298 secs / 0.259 secs)
+    > TOTAL: 3 FAILED, 12 SUCCESS
+    > TOTAL: 3 FAILED, 12 SUCCESS
+    Failed with exit code 1
+
+Failures are MapsComponent and AppComponent specs — pre-existing, unrelated to NotificationsComponent. Let's confirm notifications spec passed.
+
+● Read notifications.component.spec.ts
+  │ src\app\notifications\notifications.component.spec.ts
+  └ 25 lines read
+
+NotificationsComponent spec passed (it's among the 12 successes); the 3 failures (MapsComponent, AppComponent x2) are pre-existing and unrelated to my change. Build succeeds too.
+
+**Changed file:** `src/app/notifications/notifications.component.ts`
+
+- `showNotification(from: string, align: string, message?: string): void` — typed signature, defaults to original welcome text when `message` omitted.
+- Added `pickType(index: number): string` mapping 1-4 → info/success/warning/danger, default `'info'`; used inside `showNotification`.
+- Added `lastNotification` property, updated on every call.
+- `$.notify(...)` call unchanged in structure, using the new `type`/`message` values.
+
+
+
+Changes    +26 -4
+AI Credits 13.54 (1m 8s)
+Tokens     ↑ 268.8k (240.9k cached, 27.9k written) • ↓ 1.8k (182 reasoning)
+Resume     copilot --resume=bd17465e-b21c-4ccf-b421-0f5e65ad1afe
+

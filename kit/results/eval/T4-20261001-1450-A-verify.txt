@@ -1,0 +1,209 @@
+● Build Angular project (shell)                                                                  16s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeded. Now running the notifications spec.
+
+✗ Run Angular tests headless (shell)                                                             13s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-Object -Last 100
+  └ 1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (3 FAILED) (0 secs / 0.213 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.218 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.226 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.231 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.243 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.277 secs / 0.243 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+✗ Check failing tests and notifications results (shell)                                          11s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-String -Pattern "FAILED|notifications" | Select-Object -Unique
+  └ Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 2 of 15 (1 FAILED) (0 secs / 0.078 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 3 of 15 (2 FAILED) (0 secs / 0.081 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 4 of 15 (3 FAILED) (0 secs / 0.086 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 5 of 15 (3 FAILED) (0 secs / 0.093 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (3 FAILED) (0 secs / 0.12 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (3 FAILED) (0 secs / 0.13 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.137 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (3 FAILED) (0 secs / 0.144 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.152 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.152 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (3 FAILED) (0 secs / 0.159 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.164 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.164 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.182 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.182 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.206 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.206 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.22 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.258 secs / 0.22 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    Failed with exit code 1
+
+The 3 failures are pre-existing, unrelated to notifications (AppComponent, MapsComponent). The NotificationsComponent spec passed — no failures reported for it.
+
+Both `npx ng build` and the notifications spec passed successfully (pre-existing unrelated failures in AppComponent/MapsComponent remain, not caused by this change).
+
+**File changed:**
+- `src\app\notifications\notifications.component.ts`
+
+
+
+Changes    +19 -4
+AI Credits 16.13 (1m 30s)
+Tokens     ↑ 357.1k (326.7k cached, 30.4k written) • ↓ 2.0k (191 reasoning)
+Resume     copilot --resume=30538da1-bcdd-44da-8393-e5ac124339f3
+

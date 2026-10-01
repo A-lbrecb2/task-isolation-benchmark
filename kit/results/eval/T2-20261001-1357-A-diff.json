@@ -1,0 +1,14 @@
+{
+  "task": "T2",
+  "files_changed": 2,
+  "files_in_scope": 2,
+  "diff_precision": 1.0,
+  "lines_changed_total": 14,
+  "lines_out_of_scope": 0,
+  "touched_files": [
+    "src/app/components/sidebar/sidebar.component.html",
+    "src/app/components/sidebar/sidebar.component.ts"
+  ],
+  "out_of_scope_files": []
+}
+

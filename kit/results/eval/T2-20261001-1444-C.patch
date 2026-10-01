@@ -1,0 +1,43 @@
+diff --git a/src/app/components/sidebar/sidebar.component.html b/src/app/components/sidebar/sidebar.component.html
+index efeea8b..7579f59 100644
+--- a/src/app/components/sidebar/sidebar.component.html
++++ b/src/app/components/sidebar/sidebar.component.html
+@@ -54,6 +54,7 @@
+         </li>
+     </ul>
+   </div>
++    <input type="text" class="form-control menu-filter" placeholder="Filter menu..." (input)="filterMenu($event.target.value)">
+     <ul class="nav">
+         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+             <a class="nav-link" [routerLink]="[menuItem.path]">
+diff --git a/src/app/components/sidebar/sidebar.component.ts b/src/app/components/sidebar/sidebar.component.ts
+index 70eb5fc..e029084 100644
+--- a/src/app/components/sidebar/sidebar.component.ts
++++ b/src/app/components/sidebar/sidebar.component.ts
+@@ -25,12 +25,24 @@ export const ROUTES: RouteInfo[] = [
+ })
+ export class SidebarComponent implements OnInit {
+   menuItems: any[];
++  activeFilter = '';
+ 
+   constructor() { }
+ 
+   ngOnInit() {
+     this.menuItems = ROUTES.filter(menuItem => menuItem);
+   }
++
++  filterMenu(query: string): void {
++    this.activeFilter = (query || '').trim();
++    if (!this.activeFilter) {
++      this.menuItems = ROUTES.filter(menuItem => menuItem);
++      return;
++    }
++    const lowerQuery = this.activeFilter.toLowerCase();
++    this.menuItems = ROUTES.filter(menuItem => menuItem.title.toLowerCase().includes(lowerQuery));
++  }
++
+   isMobileMenu() {
+       if ($(window).width() > 991) {
+           return false;
+.guardrails/sbom.baseline.json
+

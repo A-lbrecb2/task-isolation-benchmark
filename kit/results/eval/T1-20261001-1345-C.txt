@@ -1,0 +1,58 @@
+● List directory src\app\table-list
+  └ 4 files found
+
+● Read table-list.component.ts
+  │ src\app\table-list\table-list.component.ts
+  └ 15 lines read
+
+● Read table-list.component.html
+  │ src\app\table-list\table-list.component.html
+  └ 276 lines read
+
+Now I'll update the component TS and HTML.
+
+✗ Create table-list.component.ts
+  │ src\app\table-list\table-list.component.ts
+  └ Path already exists
+
+● Edit table-list.component.ts +21
+  └ src\app\table-list\table-list.component.ts
+
+Now update the HTML with `*ngFor` and currency pipe for both tables.
+
+● Edit table-list.component.html +6 -91
+  └ src\app\table-list\table-list.component.html
+
+● Edit table-list.component.html +6 -91
+  └ src\app\table-list\table-list.component.html
+
+/ Search (grep)
+  │ "CommonModule|BrowserModule" (src\app\app.module.ts)
+  └ 1 file found
+
+Good, BrowserModule (which exports CommonModule) is present. Now build and test.
+
+● Build Angular project (shell)                                                               1m 26s
+  │ cd C:\Crodox\_wb\T1; npx ng build 2>&1 | Out-String
+  └ 19 lines…
+
+Build succeeds. Now run tests.
+
+● Run Angular tests headless (shell)                                                             38s
+  │ cd C:\Crodox\_wb\T1; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Out-String
+  └ 22 lines…
+
+Both tests pass (the app-table-list errors are pre-existing/unrelated app.component test noise, build still SUCCESS). Both build and tests are green.
+
+Files changed:
+- `src\app\table-list\table-list.component.ts`
+- `src\app\table-list\table-list.component.html`
+
+
+
+Changes    +33 -182
+AI Credits 15.94 (2m 52s)
+Tokens     ↑ 325.0k (303.4k cached, 21.6k written) • ↓ 4.5k (71 reasoning)
+Resume     copilot --resume=4929d29f-6cb9-4631-93a6-ff1b595fadfd
+

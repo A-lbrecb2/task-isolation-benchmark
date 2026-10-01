@@ -1,0 +1,137 @@
+warning: in the working copy of 'kit/results/results.csv', LF will be replaced by CRLF the next time Git touches it
+diff --git a/full-repo/src/app/dashboard/dashboard.component.ts b/full-repo/src/app/dashboard/dashboard.component.ts
+index 36a0b02..030052d 100644
+--- a/full-repo/src/app/dashboard/dashboard.component.ts
++++ b/full-repo/src/app/dashboard/dashboard.component.ts
+@@ -1,6 +1,11 @@
+ import { Component, OnInit } from '@angular/core';
+ import * as Chartist from 'chartist';
+ 
++export interface ChartData {
++  labels: string[];
++  series: number[][];
++}
++
+ @Component({
+   selector: 'app-dashboard',
+   templateUrl: './dashboard.component.html',
+@@ -65,22 +70,50 @@ export class DashboardComponent implements OnInit {
+ 
+       seq2 = 0;
+   };
+-  ngOnInit() {
+-      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
+ 
+-      const dataDailySalesChart: any = {
++  getDailySalesData(): ChartData {
++      return {
+           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+           series: [
+               [12, 17, 7, 17, 23, 18, 38]
+           ]
+       };
++  }
++
++  getCompletedTasksData(): ChartData {
++      return {
++          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
++          series: [
++              [230, 750, 450, 300, 280, 240, 200, 190]
++          ]
++      };
++  }
++
++  getWebsiteViewsData(): ChartData {
++      return {
++          labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
++          series: [
++              [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
++          ]
++      };
++  }
++
++  suggestedHigh(series: number[][]): number {
++      const max = Math.max(...series.map(s => Math.max(...s)));
++      return (Math.floor(max / 10) + 1) * 10;
++  }
++
++  ngOnInit() {
++      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
++
++      const dataDailySalesChart: any = this.getDailySalesData();
+ 
+      const optionsDailySalesChart: any = {
+           lineSmooth: Chartist.Interpolation.cardinal({
+               tension: 0
+           }),
+           low: 0,
+-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
++          high: this.suggestedHigh(dataDailySalesChart.series), // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+           chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
+       }
+ 
+@@ -91,19 +124,14 @@ export class DashboardComponent implements OnInit {
+ 
+       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
+ 
+-      const dataCompletedTasksChart: any = {
+-          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+-          series: [
+-              [230, 750, 450, 300, 280, 240, 200, 190]
+-          ]
+-      };
++      const dataCompletedTasksChart: any = this.getCompletedTasksData();
+ 
+      const optionsCompletedTasksChart: any = {
+           lineSmooth: Chartist.Interpolation.cardinal({
+               tension: 0
+           }),
+           low: 0,
+-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
++          high: this.suggestedHigh(dataCompletedTasksChart.series), // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+           chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
+       }
+ 
+@@ -116,19 +144,13 @@ export class DashboardComponent implements OnInit {
+ 
+       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+ 
+-      var datawebsiteViewsChart = {
+-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+-        series: [
+-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+-
+-        ]
+-      };
++      var datawebsiteViewsChart = this.getWebsiteViewsData();
+       var optionswebsiteViewsChart = {
+           axisX: {
+               showGrid: false
+           },
+           low: 0,
+-          high: 1000,
++          high: this.suggestedHigh(datawebsiteViewsChart.series),
+           chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
+       };
+       var responsiveOptions: any[] = [
+diff --git a/kit/results/results.csv b/kit/results/results.csv
+index 54307f7..1f948d5 100644
+--- a/kit/results/results.csv
++++ b/kit/results/results.csv
+@@ -20,3 +20,15 @@ R018,2026-10-01,T3,C_isolation,,claude-sonnet-5 (Copilot CLI),9.18,9.18,204900,7
+ R019,2026-10-01,T5,A_full_repo,,claude-sonnet-5 (Copilot CLI),15.41,23.98,218000,6,44,,3,3,1,1,1,copilot cli; two-stage; verify footer 23.98 credits 122 s 4 steps (stored as 8.57 after subtracting the task turn); TOTAL: 3 FAILED; 15 SUCCESS,3,265,8.57
+ R020,2026-10-01,T5,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),17.45,17.45,372500,10,108,,3,3,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 15 SUCCESS,0,265,
+ R021,2026-10-01,T5,C_isolation,,claude-sonnet-5 (Copilot CLI),12.77,12.77,220300,6,158,,3,3,1,1,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T5; TOTAL: 5 SUCCESS,2,17,
++R022,2026-10-01,T1,A_full_repo,,claude-sonnet-5 (Copilot CLI),16.92,25.97,353900,10,80,,4,4,2,2,1,copilot cli; two-stage; verify footer 25.97 credits 135 s 2 steps (stored as 9.05 after subtracting the task turn); TOTAL: 3 FAILED; 16 SUCCESS,0,265,9.05
++R023,2026-10-01,T1,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),18.64,18.64,409800,10,119,,4,4,3,3,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 16 SUCCESS,0,265,
++R024,2026-10-01,T1,C_isolation,,claude-sonnet-5 (Copilot CLI),15.94,15.94,325000,10,172,,4,4,2,2,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T1; TOTAL: 6 SUCCESS,0,17,
++R025,2026-10-01,T2,A_full_repo,,claude-sonnet-5 (Copilot CLI),8.14,16.9,174200,5,18,,4,4,2,2,1,copilot cli; two-stage; verify footer 16.9 credits 100 s 4 steps (stored as 8.76 after subtracting the task turn); TOTAL: 3 FAILED; 16 SUCCESS,0,265,8.76
++R026,2026-10-01,T2,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),11.14,11.14,194700,7,70,,4,4,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 16 SUCCESS,0,265,
++R027,2026-10-01,T2,C_isolation,,claude-sonnet-5 (Copilot CLI),10.11,10.11,212500,7,154,,4,4,2,2,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T2; TOTAL: 6 SUCCESS,0,17,
++R028,2026-10-01,T2,A_full_repo,,claude-sonnet-5 (Copilot CLI),8.19,14.09,174400,6,19,,4,4,2,2,1,copilot cli; two-stage; verify footer 14.09 credits 80 s 3 steps (stored as 5.9 after subtracting the task turn); TOTAL: 3 FAILED; 16 SUCCESS,0,265,5.9
++R029,2026-10-01,T2,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),12.87,12.87,257500,9,81,,4,4,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 16 SUCCESS,0,265,
++R030,2026-10-01,T2,C_isolation,,claude-sonnet-5 (Copilot CLI),10.16,10.16,212700,7,44,,4,4,2,2,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T2; TOTAL: 6 SUCCESS,0,17,
++R031,2026-10-01,T4,A_full_repo,,claude-sonnet-5 (Copilot CLI),9.61,16.13,211900,6,28,,4,4,1,1,1,copilot cli; two-stage; verify footer 16.13 credits 90 s 3 steps (stored as 6.52 after subtracting the task turn); TOTAL: 3 FAILED; 16 SUCCESS,0,265,6.52
++R032,2026-10-01,T4,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),13.54,13.54,268800,7,68,,4,4,1,1,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 16 SUCCESS,0,265,
++R033,2026-10-01,T4,C_isolation,,claude-sonnet-5 (Copilot CLI),10.72,10.72,247700,7,138,,4,4,1,1,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T4; TOTAL: 6 SUCCESS,0,17,
+

@@ -1,0 +1,27 @@
+/ Search (grep)
+  │ "SidebarComponent"
+  └ 3 files found
+
+● Read sidebar.component.ts
+  │ src\app\components\sidebar\sidebar.component.ts
+  └ 40 lines read
+
+● Read sidebar.component.html
+  │ src\app\components\sidebar\sidebar.component.html
+  └ 65 lines read
+
+● Edit sidebar.component.ts +13
+  └ src\app\components\sidebar\sidebar.component.ts
+
+● Edit sidebar.component.html +1
+  └ src\app\components\sidebar\sidebar.component.html
+
+Added `filterMenu(query)` and `activeFilter` (trimmed, case-insensitive title match, empty/whitespace restores full list) to `SidebarComponent`, plus a filter input above the nav list wired to `(input)="filterMenu($event.target.value)"`. `ROUTES` and other files untouched.
+
+
+
+Changes    +14 -0
+AI Credits 8.14 (18s)
+Tokens     ↑ 174.2k (158.7k cached, 15.6k written) • ↓ 1.1k (55 reasoning)
+Resume     copilot --resume=978fd48b-1351-4b50-99ab-154d8486cdfa
+

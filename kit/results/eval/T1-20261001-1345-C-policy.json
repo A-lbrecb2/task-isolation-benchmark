@@ -1,0 +1,10 @@
+{
+  "task": "T1",
+  "count": 0,
+  "by_rule": {},
+  "sbom_components_now": 17,
+  "sbom_baseline": true,
+  "preexisting_license_exceptions": [],
+  "violations": []
+}
+

@@ -1,0 +1,167 @@
+● Build Angular app (shell)                                                                      16s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeded. Now running the test suite.
+
+✗ Run Angular tests headlessly (shell)                                                           13s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-Object -Last 100
+  └ ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.246 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.246 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.246 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.246 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (1 FAILED) (0 secs / 0.272 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (1 FAILED) (0 secs / 0.29 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (1 FAILED) (0 secs / 0.29 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (2 FAILED) (0 secs / 0.294 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (2 FAILED) (0 secs / 0.294 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (2 FAILED) (0 secs / 0.297 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (2 FAILED) (0 secs / 0.297 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.299 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.346 secs / 0.299 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+● Run only sidebar spec (shell)                                                                  12s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js --include='**/sidebar.component.spec.ts' 2>&1 | Select-Object -Last 40
+  └ 40 lines…
+
+Sidebar spec passes (1/1 SUCCESS). The 3 failures in the full suite are pre-existing, unrelated to sidebar (AppComponent title test, DashboardComponent matTooltipPosition) — not caused by these changes.
+
+**Build**: ✔ succeeded. **Sidebar spec**: ✔ passed.
+
+Files changed:
+- `src\app\components\sidebar\sidebar.component.ts`
+- `src\app\components\sidebar\sidebar.component.html`
+
+
+
+Changes    +13 -0
+AI Credits 14.09 (1m 20s)
+Tokens     ↑ 311.1k (284.7k cached, 26.3k written) • ↓ 1.8k (64 reasoning)
+Resume     copilot --resume=0bbb5b60-7a7d-4657-8a2b-45030ce044ef
+

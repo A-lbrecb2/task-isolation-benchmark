@@ -1,0 +1,267 @@
+diff --git a/src/app/table-list/table-list.component.html b/src/app/table-list/table-list.component.html
+index 794f9ca..633578c 100644
+--- a/src/app/table-list/table-list.component.html
++++ b/src/app/table-list/table-list.component.html
+@@ -28,106 +28,21 @@
+                                   </th>
+                               </thead>
+                               <tbody>
+-                                  <tr>
++                                  <tr *ngFor="let employee of employees">
+                                       <td>
+-                                          1
++                                          {{ employee.id }}
+                                       </td>
+                                       <td>
+-                                          Dakota Rice
++                                          {{ employee.name }}
+                                       </td>
+                                       <td>
+-                                          Niger
++                                          {{ employee.country }}
+                                       </td>
+                                       <td>
+-                                          Oud-Turnhout
++                                          {{ employee.city }}
+                                       </td>
+                                       <td class="text-primary">
+-                                          $36,738
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          2
+-                                      </td>
+-                                      <td>
+-                                          Minerva Hooper
+-                                      </td>
+-                                      <td>
+-                                          Curaçao
+-                                      </td>
+-                                      <td>
+-                                          Sinaai-Waas
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $23,789
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          3
+-                                      </td>
+-                                      <td>
+-                                          Sage Rodriguez
+-                                      </td>
+-                                      <td>
+-                                          Netherlands
+-                                      </td>
+-                                      <td>
+-                                          Baileux
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $56,142
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          4
+-                                      </td>
+-                                      <td>
+-                                          Philip Chaney
+-                                      </td>
+-                                      <td>
+-                                          Korea, South
+-                                      </td>
+-                                      <td>
+-                                          Overland Park
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $38,735
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          5
+-                                      </td>
+-                                      <td>
+-                                          Doris Greene
+-                                      </td>
+-                                      <td>
+-                                          Malawi
+-                                      </td>
+-                                      <td>
+-                                          Feldkirchen in Kärnten
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $63,542
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          6
+-                                      </td>
+-                                      <td>
+-                                          Mason Porter
+-                                      </td>
+-                                      <td>
+-                                          Chile
+-                                      </td>
+-                                      <td>
+-                                          Gloucester
+-                                      </td>
+-                                      <td class="text-primary">
+-                                          $78,615
++                                          {{ employee.salary | currency:'USD':'symbol':'1.0-0' }}
+                                       </td>
+                                   </tr>
+                               </tbody>
+@@ -163,106 +78,21 @@
+                                   </th>
+                               </thead>
+                               <tbody>
+-                                  <tr>
+-                                      <td>
+-                                          1
+-                                      </td>
+-                                      <td>
+-                                          Dakota Rice
+-                                      </td>
+-                                      <td>
+-                                          Niger
+-                                      </td>
+-                                      <td>
+-                                          Oud-Turnhout
+-                                      </td>
+-                                      <td>
+-                                          $36,738
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          2
+-                                      </td>
+-                                      <td>
+-                                          Minerva Hooper
+-                                      </td>
+-                                      <td>
+-                                          Curaçao
+-                                      </td>
+-                                      <td>
+-                                          Sinaai-Waas
+-                                      </td>
+-                                      <td>
+-                                          $23,789
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          3
+-                                      </td>
+-                                      <td>
+-                                          Sage Rodriguez
+-                                      </td>
+-                                      <td>
+-                                          Netherlands
+-                                      </td>
+-                                      <td>
+-                                          Baileux
+-                                      </td>
+-                                      <td>
+-                                          $56,142
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          4
+-                                      </td>
+-                                      <td>
+-                                          Philip Chaney
+-                                      </td>
+-                                      <td>
+-                                          Korea, South
+-                                      </td>
+-                                      <td>
+-                                          Overland Park
+-                                      </td>
+-                                      <td>
+-                                          $38,735
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
+-                                      <td>
+-                                          5
+-                                      </td>
+-                                      <td>
+-                                          Doris Greene
+-                                      </td>
+-                                      <td>
+-                                          Malawi
+-                                      </td>
+-                                      <td>
+-                                          Feldkirchen in Kärnten
+-                                      </td>
+-                                      <td>
+-                                          $63,542
+-                                      </td>
+-                                  </tr>
+-                                  <tr>
++                                  <tr *ngFor="let employee of employees">
+                                       <td>
+-                                          6
++                                          {{ employee.id }}
+                                       </td>
+                                       <td>
+-                                          Mason Porter
++                                          {{ employee.name }}
+                                       </td>
+                                       <td>
+-                                          Chile
++                                          {{ employee.country }}
+                                       </td>
+                                       <td>
+-                                          Gloucester
++                                          {{ employee.city }}
+                                       </td>
+                                       <td>
+-                                          $78,615
++                                          {{ employee.salary | currency:'USD':'symbol':'1.0-0' }}
+                                       </td>
+                                   </tr>
+                               </tbody>
+diff --git a/src/app/table-list/table-list.component.ts b/src/app/table-list/table-list.component.ts
+index 64b6b4f..1e39366 100644
+--- a/src/app/table-list/table-list.component.ts
++++ b/src/app/table-list/table-list.component.ts
+@@ -1,5 +1,7 @@
+ import { Component, OnInit } from '@angular/core';
+ 
++import { Employee } from './employee';
++
+ @Component({
+   selector: 'app-table-list',
+   templateUrl: './table-list.component.html',
+@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
+ })
+ export class TableListComponent implements OnInit {
+ 
++  employees: Employee[] = [
++    { id: 1, name: 'Dakota Rice', country: 'Niger', city: 'Oud-Turnhout', salary: 36738 },
++    { id: 2, name: 'Minerva Hooper', country: 'Curaçao', city: 'Sinaai-Waas', salary: 23789 },
++    { id: 3, name: 'Sage Rodriguez', country: 'Netherlands', city: 'Baileux', salary: 56142 },
++    { id: 4, name: 'Philip Chaney', country: 'Korea, South', city: 'Overland Park', salary: 38735 },
++    { id: 5, name: 'Doris Greene', country: 'Malawi', city: 'Feldkirchen in Kärnten', salary: 63542 },
++    { id: 6, name: 'Mason Porter', country: 'Chile', city: 'Gloucester', salary: 78615 }
++  ];
++
+   constructor() { }
+ 
+   ngOnInit() {
+   }
+ 
++  totalSalary(): number {
++    return this.employees.reduce((sum, employee) => sum + employee.salary, 0);
++  }
++
+ }
+src/app/table-list/employee.ts
+

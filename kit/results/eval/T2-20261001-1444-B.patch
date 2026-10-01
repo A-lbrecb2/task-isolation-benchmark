@@ -1,0 +1,41 @@
+diff --git a/src/app/components/sidebar/sidebar.component.html b/src/app/components/sidebar/sidebar.component.html
+index efeea8b..a75e984 100644
+--- a/src/app/components/sidebar/sidebar.component.html
++++ b/src/app/components/sidebar/sidebar.component.html
+@@ -54,6 +54,7 @@
+         </li>
+     </ul>
+   </div>
++    <input type="text" class="form-control menu-filter" placeholder="Filter menu..." (input)="filterMenu($any($event.target).value)">
+     <ul class="nav">
+         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+             <a class="nav-link" [routerLink]="[menuItem.path]">
+diff --git a/src/app/components/sidebar/sidebar.component.ts b/src/app/components/sidebar/sidebar.component.ts
+index 70eb5fc..4f87096 100644
+--- a/src/app/components/sidebar/sidebar.component.ts
++++ b/src/app/components/sidebar/sidebar.component.ts
+@@ -25,6 +25,7 @@ export const ROUTES: RouteInfo[] = [
+ })
+ export class SidebarComponent implements OnInit {
+   menuItems: any[];
++  activeFilter = '';
+ 
+   constructor() { }
+ 
+@@ -37,4 +38,15 @@ export class SidebarComponent implements OnInit {
+       }
+       return true;
+   };
++
++  filterMenu(query: string): void {
++    const trimmed = (query || '').trim();
++    this.activeFilter = trimmed;
++    if (trimmed === '') {
++      this.menuItems = ROUTES.filter(menuItem => menuItem);
++      return;
++    }
++    const lowerQuery = trimmed.toLowerCase();
++    this.menuItems = ROUTES.filter(menuItem => menuItem.title.toLowerCase().includes(lowerQuery));
++  }
+ }
+

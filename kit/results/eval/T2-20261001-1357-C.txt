@@ -1,0 +1,45 @@
+● List directory src\app\components\sidebar
+  └ 4 files found
+
+● Read sidebar.component.html
+  │ src\app\components\sidebar\sidebar.component.html
+  └ 65 lines read
+
+● Read sidebar.component.ts
+  │ src\app\components\sidebar\sidebar.component.ts
+  └ 40 lines read
+
+Adding `filterMenu`, `activeFilter`, and a filter input above the nav list.
+
+● Edit sidebar.component.ts +13
+  └ src\app\components\sidebar\sidebar.component.ts
+
+● Edit sidebar.component.html +1
+  └ src\app\components\sidebar\sidebar.component.html
+
+Now build and test.
+
+● Build Angular project (shell)                                                               1m 34s
+  │ cd C:\Crodox\_wb\T2; npx ng build 2>&1 | Select-Object -Last 40
+  └ 19 lines…
+
+Build succeeds. Running tests now.
+
+● Run Angular tests headless (shell)                                                             35s
+  │ cd C:\Crodox\_wb\T2; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 60
+  └ 60 lines…
+
+Tests pass (2/2 SUCCESS); the routerLink warnings are pre-existing console errors, not failures. Build and tests both green.
+
+**Files changed:**
+- `src\app\components\sidebar\sidebar.component.ts` — added `activeFilter` property and `filterMenu(query: string)` method.
+- `src\app\components\sidebar\sidebar.component.html` — added filter text input above the nav list, bound to `(input)="filterMenu($event.target.value)"`.
+
+
+
+Changes    +14 -0
+AI Credits 10.11 (2m 34s)
+Tokens     ↑ 212.5k (193.1k cached, 19.4k written) • ↓ 1.4k (15 reasoning)
+Resume     copilot --resume=d20ce54b-8cfa-486c-9a57-6fcc7009f7f5
+

@@ -1,0 +1,14 @@
+{
+  "task": "T5",
+  "files_changed": 2,
+  "files_in_scope": 2,
+  "diff_precision": 1.0,
+  "lines_changed_total": 48,
+  "lines_out_of_scope": 0,
+  "touched_files": [
+    "src/app/dashboard/chart-data.ts",
+    "src/app/dashboard/dashboard.component.ts"
+  ],
+  "out_of_scope_files": []
+}
+

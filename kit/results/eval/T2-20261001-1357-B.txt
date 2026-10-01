@@ -1,0 +1,163 @@
+● Read sidebar.component.html
+  │ src\app\components\sidebar\sidebar.component.html
+  └ 65 lines read
+
+● Read sidebar.component.ts
+  │ src\app\components\sidebar\sidebar.component.ts
+  └ 40 lines read
+
+● Edit sidebar.component.ts +13
+  └ src\app\components\sidebar\sidebar.component.ts
+
+● Edit sidebar.component.html +1
+  └ src\app\components\sidebar\sidebar.component.html
+
+● Build Angular project (shell)                                                                  18s
+  │ cd C:\Crodox\armB-full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeds. Now running tests.
+
+✗ Run Angular unit tests headless (shell)                                                        13s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 80
+  └ at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.276 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.279 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.312 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.32 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.371 secs / 0.32 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+Let me verify whether these 3 failures pre-exist on the base branch (unrelated to my change).
+
+● Run tests on unmodified baseline to compare failures (shell)                                   14s
+  │ cd C:\Crodox\armB-full-repo; git stash; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-String "TOTAL|FAILED"; git stash pop
+  └ 69 lines…
+
+Confirmed: baseline also has 3 pre-existing failures (MapsComponent, AppComponent x2), unrelated to sidebar. My changes didn't introduce new failures — sidebar spec still passes. Build succeeds too.
+
+Changes made:
+- `src/app/components/sidebar/sidebar.component.ts`: added `activeFilter` property and `filterMenu(query: string): void` method.
+- `src/app/components/sidebar/sidebar.component.html`: added filter text input above the nav list, calling `filterMenu($event.target.value)` on `input`.
+
+
+
+Changes    +14 -0
+AI Credits 11.14 (1m 10s)
+Tokens     ↑ 194.7k (170.5k cached, 24.2k written) • ↓ 1.7k (140 reasoning)
+Resume     copilot --resume=ef4f67a0-f9ce-49c8-9d2d-d81112f87e3a
+
