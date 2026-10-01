@@ -29,11 +29,16 @@ COLOR = {ARM_A: "#1a1a1a", ARM_B: "#6e6e6e", ARM_C: "#b5b5b5"}
 ARM_ALIASES = {"B_workbench": ARM_C, "C_crodox": ARM_C}
 
 
-def load(path):
+def load(path, model_contains=None, model_excludes=None):
     rows = []
     with open(path, newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh):
             if not r.get("task"):
+                continue
+            model = r.get("model") or ""
+            if model_contains and model_contains not in model:
+                continue
+            if model_excludes and model_excludes in model:
                 continue
             if (r.get("tests_passed") or "").strip() == "":
                 # evaluation not done yet (spec, diff, build pending): leave the row out
@@ -189,8 +194,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("csv")
     ap.add_argument("--out", default="summary")
+    ap.add_argument("--model-contains", help='keep only rows whose model column contains this text, e.g. "Copilot CLI"')
+    ap.add_argument("--model-excludes", help='drop rows whose model column contains this text (VS Code only: --model-excludes "Copilot CLI")')
     args = ap.parse_args()
-    rows = load(args.csv)
+    rows = load(args.csv, args.model_contains, args.model_excludes)
     if not rows:
         raise SystemExit("no rows found")
     tasks, agg = aggregate(rows)

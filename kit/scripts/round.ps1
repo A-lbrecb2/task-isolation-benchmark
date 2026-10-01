@@ -87,12 +87,19 @@ function Invoke-Copilot($repo, $promptFile, $out, $resume) {
   }
 }
 
-function Evaluate-Object($repo) {
-  # same checks as Evaluate, but returned as numbers for results.csv
+function Evaluate-Object($repo, $label) {
+  # same checks as Evaluate, but returned as numbers for results.csv; the raw diff, policy and git diff go next to the transcript
   Push-Location $repo
   try {
-    $sd = (python (Join-Path $kit 'scripts\score_diff.py') --task $Task --repo . --json 2>&1 | Out-String | ConvertFrom-Json)
-    $pc = (python (Join-Path $kit 'scripts\check_policy.py') --task $Task --repo . --json 2>&1 | Out-String | ConvertFrom-Json)
+    $sdText = (python (Join-Path $kit 'scripts\score_diff.py') --task $Task --repo . --json 2>&1 | Out-String)
+    $pcText = (python (Join-Path $kit 'scripts\check_policy.py') --task $Task --repo . --json 2>&1 | Out-String)
+    if ($label) {
+      $sdText | Out-File (Join-Path $evalDir "$Task-$stamp-$label-diff.json") -Encoding utf8
+      $pcText | Out-File (Join-Path $evalDir "$Task-$stamp-$label-policy.json") -Encoding utf8
+      (git diff 2>&1 | Out-String) + (git ls-files --others --exclude-standard 2>&1 | Out-String) | Out-File (Join-Path $evalDir "$Task-$stamp-$label.patch") -Encoding utf8
+    }
+    $sd = $sdText | ConvertFrom-Json
+    $pc = $pcText | ConvertFrom-Json
     Copy-Item $specSrc (Join-Path $repo $specRel) -Force
     $test = (npx ng test --watch=false --karma-config karma.headless.js 2>&1 | Out-String)
     $failedBench = ([regex]::Matches($test, '(?m)^.*\(benchmark\).*FAILED\s*$')).Count
@@ -250,21 +257,21 @@ switch ($Phase) {
     Write-Host ("  {0} credits reported, {1} s, {2} steps" -f $cpAv.credits, $cpAv.seconds, $cpAv.steps)
     # -ResumeCumulative: the CLI reports the whole resumed session, so subtract the task turn
     $verifyCredits = if ($ResumeCumulative -and $cpAv.credits -gt $cpA.credits) { [math]::Round($cpAv.credits - $cpA.credits, 2) } else { $cpAv.credits }
-    $evA = Evaluate-Object $repoA
+    $evA = Evaluate-Object $repoA "A"
     Append-Result 'A_full_repo' $cpA $evA $verifyCredits ("copilot cli; two-stage; verify footer {0} credits {1} s {2} steps (stored as {3}{4}); {5}" -f (Num $cpAv.credits), $cpAv.seconds, $cpAv.steps, (Num $verifyCredits), $(if ($ResumeCumulative) { ' after subtracting the task turn' } else { '' }), $evA.test_line)
 
     # --- arm B ---
     Section 'arm B: copilot'
     $cpB = Invoke-Copilot $ArmB $promptFile (Join-Path $evalDir "$Task-$stamp-B.txt") $null
     Write-Host ("  {0} credits, {1} s, {2} steps, +{3} -{4}" -f $cpB.credits, $cpB.seconds, $cpB.steps, $cpB.added, $cpB.removed)
-    $evB = Evaluate-Object $ArmB
+    $evB = Evaluate-Object $ArmB "B"
     Append-Result 'B_full_repo_guardrails' $cpB $evB $null ("copilot cli; instructions" + $(if ($NoPolicy) { '' } else { ' + policy' }) + "; files.exclude not applicable in the CLI; " + $evB.test_line)
 
     # --- arm C ---
     Section 'arm C: copilot'
     $cpC = Invoke-Copilot $wbDir $promptFile (Join-Path $evalDir "$Task-$stamp-C.txt") $null
     Write-Host ("  {0} credits, {1} s, {2} steps, +{3} -{4}" -f $cpC.credits, $cpC.seconds, $cpC.steps, $cpC.added, $cpC.removed)
-    $evC = Evaluate-Object $wbDir
+    $evC = Evaluate-Object $wbDir "C"
     Append-Result 'C_isolation' $cpC $evC $null ("copilot cli; crodox workbench clone $wbDir; " + $evC.test_line)
 
     # --- reset the arms again so the next run starts clean ---

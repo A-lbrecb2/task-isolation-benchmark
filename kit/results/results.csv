@@ -17,3 +17,6 @@ R015,2026-09-24,T4,C_isolation,1,Claude Sonnet 5 High 1M,9.4,9.4,32800,8,99,,4,,
 R016,2026-10-01,T3,A_full_repo,,claude-sonnet-5 (Copilot CLI),7.93,12.93,171200,6,17,,3,3,2,2,1,copilot cli; two-stage; verify footer 12.93 credits 59 s 3 steps (stored as 5 after subtracting the task turn); TOTAL: 3 FAILED; 15 SUCCESS,0,265,5
 R017,2026-10-01,T3,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),11.82,11.82,221200,8,121,,3,3,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 15 SUCCESS,0,265,
 R018,2026-10-01,T3,C_isolation,,claude-sonnet-5 (Copilot CLI),9.18,9.18,204900,7,128,,3,3,2,2,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T3; TOTAL: 5 SUCCESS,0,17,
+R019,2026-10-01,T5,A_full_repo,,claude-sonnet-5 (Copilot CLI),15.41,23.98,218000,6,44,,3,3,1,1,1,copilot cli; two-stage; verify footer 23.98 credits 122 s 4 steps (stored as 8.57 after subtracting the task turn); TOTAL: 3 FAILED; 15 SUCCESS,3,265,8.57
+R020,2026-10-01,T5,B_full_repo_guardrails,,claude-sonnet-5 (Copilot CLI),17.45,17.45,372500,10,108,,3,3,2,2,1,copilot cli; instructions + policy; files.exclude not applicable in the CLI; TOTAL: 3 FAILED; 15 SUCCESS,0,265,
+R021,2026-10-01,T5,C_isolation,,claude-sonnet-5 (Copilot CLI),12.77,12.77,220300,6,158,,3,3,1,1,1,copilot cli; crodox workbench clone C:\Crodox\_wb\T5; TOTAL: 5 SUCCESS,2,17,
