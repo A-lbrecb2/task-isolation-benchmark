@@ -1,0 +1,128 @@
+● Read footer.component.ts
+  │ src\app\components\footer\footer.component.ts
+  └ 16 lines read
+
+● Read footer.component.html
+  │ src\app\components\footer\footer.component.html
+  └ 33 lines read
+
+● Edit footer.component.ts +9 -2
+  └ src\app\components\footer\footer.component.ts
+
+● Edit footer.component.html +2 -2
+  └ src\app\components\footer\footer.component.html
+
+Now let's verify build and tests.
+
+● Build Angular app (shell)                                                                      17s
+  │ cd C:\Crodox\armB-full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeds. Now run tests for footer spec.
+
+● Read footer.component.spec.ts
+  │ src\app\components\footer\footer.component.spec.ts
+  └ 25 lines read
+
+Spec unchanged, no date pipe dependency. Now run tests.
+
+✗ Run Angular tests headless (shell)                                                             11s
+  │ cd C:\Crodox\armB-full-repo; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 80
+  └ Chrome Headless 154.0.0.0 (Windows 10): Executed 3 of 15 SUCCESS (0 secs / 0.082 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 4 of 15 SUCCESS (0 secs / 0.088 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 5 of 15 (1 FAILED) (0 secs / 0.122 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 6 of 15 (2 FAILED) (0 secs / 0.125 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 7 of 15 (2 FAILED) (0 secs / 0.126 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (2 FAILED) (0 secs / 0.144 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (2 FAILED) (0 secs / 0.152 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (2 FAILED) (0 secs / 0.165 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (2 FAILED) (0 secs / 0.171 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (2 FAILED) (0 secs / 0.18 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    ReferenceError: google is not defined
+    at MapsComponent.call [as ngOnInit] (src/app/maps/maps.component.ts:22:20)
+    at callHook (node_modules/@angular/core/fesm2015/core.mjs:2491:22)
+    at callHooks (node_modules/@angular/core/fesm2015/core.mjs:2460:17)
+    at executeInitAndCheckHooks (node_modules/@angular/core/fesm2015/core.mjs:2411:9)
+    at refreshView (node_modules/@angular/core/fesm2015/core.mjs:12013:21)
+    at detectChangesInternal (node_modules/@angular/core/fesm2015/core.mjs:13216:9)
+    at RootViewRef.detectChanges (node_modules/@angular/core/fesm2015/core.mjs:13728:9)
+    at ComponentFixture._tick (node_modules/@angular/core/fesm2015/testing.mjs:141:32)
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.184 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) MapsComponent should create FAILED
+    ReferenceError: google is not defined
+    at MapsComponent.call [as ngOnInit] (src/app/maps/maps.component.ts:22:20)
+    at callHook (node_modules/@angular/core/fesm2015/core.mjs:2491:22)
+    at callHooks (node_modules/@angular/core/fesm2015/core.mjs:2460:17)
+    at executeInitAndCheckHooks (node_modules/@angular/core/fesm2015/core.mjs:2411:9)
+    at refreshView (node_modules/@angular/core/fesm2015/core.mjs:12013:21)
+    at detectChangesInternal (node_modules/@angular/core/fesm2015/core.mjs:13216:9)
+    at RootViewRef.detectChanges (node_modules/@angular/core/fesm2015/core.mjs:13728:9)
+    at ComponentFixture._tick (node_modules/@angular/core/fesm2015/testing.mjs:141:32)
+    at apply (node_modules/@angular/core/fesm2015/testing.mjs:154:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.191 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.204 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.24 secs / 0.204 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+Failures are pre-existing (AppComponent, MapsComponent), unrelated to footer. FooterComponent's "should create" test passed.
+
+Build succeeds; FooterComponent spec passes (other pre-existing failures unrelated, e.g. AppComponent/MapsComponent).
+
+**Files changed:**
+- `src/app/components/footer/footer.component.ts`
+- `src/app/components/footer/footer.component.html`
+
+
+
+Changes    +11 -4
+AI Credits 9.45 (49s)
+Tokens     ↑ 181.3k (162.2k cached, 19.1k written) • ↓ 1.4k (13 reasoning)
+Resume     copilot --resume=afb08c22-86a3-4fe4-a169-9cd201298fce
+

@@ -1,0 +1,193 @@
+✗ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config (sh… 12s
+  karma.headless.js 2>&1 | Select-Object -Last 80
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-Object -Last 80
+  └ 1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.211 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.216 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.225 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.258 secs / 0.225 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+● cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  karma.headless.js 2>&1 | Select-String -Pattern "TableListComponent|SUCCESS|FAILED" | Select-Objec
+  -First 40
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-String -Pattern "TableListComponent|SUCCESS|FAILED" |
+  │ Select-Object -First 40
+  └ 40 lines…
+
+● cd C:\Crodox\task-isolation-benchmark\full-repo; git status --short (shell)
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; git status --short
+  └ 17 lines…
+
+Only table-list files changed by me. The AppComponent/UserProfileComponent failures are pre-existing, unrelated to table-list. Let me confirm baseline failures existed before my change by stashing.
+
+✗ cd C:\Crodox\task-isolation-benchmark\full-repo; git stash; npx ng test --watch=false --karma-conf
+  karma.headless.js 2>&1 | Select-String -Pattern "TOTAL" | Select-Object -Last 5
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; git stash; npx ng test --watch=false
+  │ --karma-config karma.headless.js 2>&1 | Select-String -Pattern "TOTAL" | Select-Object -Last 5
+  └ Saved working directory and index state WIP on main: c9ba547 CLI series complete: T1-T5, T2 x2,
+    T5 x3 (R022-R039); RUN_LOG 27-44; any-rule finding
+
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    Failed with exit code 1
+
+Confirmed: the 3 failures are pre-existing (AppComponent/UserProfileComponent), unrelated to my changes. Restoring my changes.
+
+● cd C:\Crodox\task-isolation-benchmark\full-repo; git stash pop; git status --short (shell)
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; git stash pop; git status --short
+  └ 46 lines…
+
+Both verifications pass:
+- **`npx ng build`**: ✅ succeeds.
+- **`npx ng test --watch=false --karma-config karma.headless.js`**: ✅ 12/15 pass; the 3 failures (AppComponent, UserProfileComponent) are pre-existing baseline failures unrelated to `TableListComponent`, confirmed via `git stash`.
+
+**Files changed:**
+- `src/app/table-list/table-list.component.ts`
+- `src/app/table-list/table-list.component.html`
+
+
+
+Changes    +33 -182
+AI Credits 25.62 (2m 2s)
+Tokens     ↑ 566.0k (527.9k cached, 38.1k written) • ↓ 5.5k (242 reasoning)
+Resume     copilot --resume=f2e166d7-2f97-48d4-9ea6-83564de12dc2
+

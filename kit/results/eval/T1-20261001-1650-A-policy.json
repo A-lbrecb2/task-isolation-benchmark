@@ -1,0 +1,15 @@
+{
+  "task": "T1",
+  "count": 0,
+  "by_rule": {},
+  "sbom_components_now": 265,
+  "sbom_baseline": false,
+  "preexisting_license_exceptions": [
+    "pkg:npm/argparse@2.0.1 (Python-2.0)",
+    "pkg:npm/caniuse-lite@1.0.30001810 (CC-BY-4.0)",
+    "pkg:npm/classlist.js@1.1.20150312 (Dedicated to the public domain)",
+    "pkg:npm/url-template@2.0.8 (BSD)"
+  ],
+  "violations": []
+}
+

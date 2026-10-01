@@ -1,0 +1,46 @@
+diff --git a/src/app/components/footer/footer.component.html b/src/app/components/footer/footer.component.html
+index 4eda89a..1d07f90 100644
+--- a/src/app/components/footer/footer.component.html
++++ b/src/app/components/footer/footer.component.html
+@@ -26,8 +26,8 @@
+         </nav>
+         <div class="copyright pull-right">
+             &copy;
+-            {{test | date: 'yyyy'}}, made with love by
+-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
++            {{copyrightYear}}, made with love by
++            <a [href]="companyUrl" target="_blank">{{companyName}}</a> for a better web.
+         </div>
+     </div>
+ </footer>
+diff --git a/src/app/components/footer/footer.component.ts b/src/app/components/footer/footer.component.ts
+index 6c9228a..50281fe 100644
+--- a/src/app/components/footer/footer.component.ts
++++ b/src/app/components/footer/footer.component.ts
+@@ -1,4 +1,4 @@
+-import { Component, OnInit } from '@angular/core';
++import { Component, Input, OnInit } from '@angular/core';
+ 
+ @Component({
+   selector: 'app-footer',
+@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
+ })
+ export class FooterComponent implements OnInit {
+   test : Date = new Date();
+-  
++
++  @Input() companyName: string = 'Creative Tim';
++  @Input() companyUrl: string = 'https://www.creative-tim.com';
++
+   constructor() { }
+ 
+   ngOnInit() {
+   }
+ 
++  get copyrightYear(): number {
++    return this.test.getFullYear();
++  }
++
+ }
+.guardrails/sbom.baseline.json
+

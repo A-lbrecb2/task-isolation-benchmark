@@ -1,0 +1,39 @@
+/ Search (glob)
+  │ "src/app/notifications/**"
+  └ 4 files found
+
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 42 lines read
+
+● Edit notifications.component.ts +19 -4
+  └ src\app\notifications\notifications.component.ts
+
+● Read notifications.component.ts
+  │ src\app\notifications\notifications.component.ts
+  └ 57 lines read
+
+Now build and test.
+
+● Build Angular project (shell)                                                                1m 4s
+  │ cd C:\Crodox\_wb\T4; npx ng build 2>&1 | Select-Object -Last 40
+  └ 19 lines…
+
+Build succeeded.
+
+● Run Karma tests headless (shell)                                                               21s
+  │ cd C:\Crodox\_wb\T4; npx ng test --watch=false --karma-config karma.headless.js 2>&1 |
+  │ Select-Object -Last 60
+  └ 22 lines…
+
+Tests pass (pre-existing unrelated error is just a logged message, not a failure). Both build and tests succeed.
+
+Changed file: `src\app\notifications\notifications.component.ts`
+
+
+
+Changes    +19 -4
+AI Credits 9.31 (1m 48s)
+Tokens     ↑ 208.3k (191.0k cached, 17.2k written) • ↓ 1.2k (71 reasoning)
+Resume     copilot --resume=42e975c1-f299-4a61-b09b-9272059ee3dd
+

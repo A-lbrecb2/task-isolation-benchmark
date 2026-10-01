@@ -1,0 +1,197 @@
+● Build the Angular app (shell)                                                                  17s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeded. Now running the test.
+
+✗ Run Angular unit tests headless (shell)                                                        12s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-Object -Last 100
+  └ 1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.184 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.184 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.184 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (1 FAILED) (0 secs / 0.184 secs)
+    ERROR: 'NG0304: 'mat-form-field' is not a known element (used in the 'UserProfileComponent'
+    component template):
+    1. If 'mat-form-field' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.192 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (1 FAILED) (0 secs / 0.192 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (2 FAILED) (0 secs / 0.195 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should render title in a h1 tag FAILED
+    Failed: Cannot read properties of null (reading 'textContent')
+    at UserContext.apply (src/app/app.component.spec.ts:30:12)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:408:56)
+    at Zone.runGuarded (node_modules/zone.js/dist/zone.js:180:51)
+    at runInTestZone (node_modules/zone.js/dist/async-test.js:272:33)
+    at UserContext.apply (node_modules/zone.js/dist/async-test.js:206:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:126:43)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (2 FAILED) (0 secs / 0.195 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (2 FAILED) (0 secs / 0.198 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (2 FAILED) (0 secs / 0.198 secs)
+    ERROR: 'NG0304: 'router-outlet' is not a known element (used in the 'AppComponent' component
+    template):
+    1. If 'router-outlet' is an Angular component, then verify that it is a part of an @NgModule
+    where this component is declared.
+    2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component to suppress this message.'
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.201 secs)
+    Chrome Headless 154.0.0.0 (Windows 10) AppComponent should have as title 'app works!' FAILED
+    Expected undefined to equal 'app works!'.
+    at <Jasmine>
+    at UserContext.apply (src/app/app.component.spec.ts:23:23)
+    at _ZoneDelegate.invoke (node_modules/zone.js/dist/zone.js:409:30)
+    at AsyncTestZoneSpec.onInvoke (node_modules/zone.js/dist/async-test.js:127:47)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/proxy.js:123:43)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.21 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.223 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.259 secs / 0.223 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+✗ Filter test output for Footer spec results (shell)                                             11s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-String -Pattern "Footer"
+  └ ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is
+    declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component
+    to suppress this message.'
+    ERROR: 'NG0304: 'app-footer' is not a known element (used in the 'AdminLayoutComponent'
+    component template):
+    1. If 'app-footer' is an Angular component, then verify that it is a part of an @NgModule where
+    this component is
+    declared.
+    2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the
+    '@NgModule.schemas' of this component
+    to suppress this message.'
+    Failed with exit code 1
+
+/ Search (glob)
+  │ "src/app/components/footer/*.spec.ts"
+  └ 1 file found
+
+● Read footer.component.spec.ts
+  │ src\app\components\footer\footer.component.spec.ts
+  └ 25 lines read
+
+This spec only has "should create" and it's among the 12 passing (no "FooterComponent" failures found). The 3 failures (UserProfileComponent, AppComponent) are pre-existing, unrelated to footer. Footer test passes, build succeeds.
+
+**Files changed:**
+- `src/app/components/footer/footer.component.ts`
+- `src/app/components/footer/footer.component.html`
+
+
+
+Changes    +11 -4
+AI Credits 17.96 (1m 26s)
+Tokens     ↑ 371.8k (334.3k cached, 37.5k written) • ↓ 1.9k (88 reasoning)
+Resume     copilot --resume=b24ea99c-2e58-47a6-9ded-a567092c307e
+

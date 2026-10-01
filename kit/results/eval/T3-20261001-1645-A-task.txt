@@ -1,0 +1,27 @@
+/ Search (grep)
+  │ "class FooterComponent"
+  └ 1 file found
+
+● Read footer.component.ts
+  │ src\app\components\footer\footer.component.ts
+  └ 16 lines read
+
+● Read footer.component.html
+  │ src\app\components\footer\footer.component.html
+  └ 33 lines read
+
+● Edit footer.component.ts +9 -2
+  └ src\app\components\footer\footer.component.ts
+
+● Edit footer.component.html +2 -2
+  └ src\app\components\footer\footer.component.html
+
+Done. Added `companyName`/`companyUrl` `@Input()`s with defaults, a `copyrightYear` getter deriving from `test`, and updated the template's copyright line to use them (removed the `date` pipe usage). No other files touched.
+
+
+
+Changes    +11 -4
+AI Credits 11.19 (19s)
+Tokens     ↑ 170.3k (141.0k cached, 29.3k written) • ↓ 1.1k (12 reasoning)
+Resume     copilot --resume=b24ea99c-2e58-47a6-9ded-a567092c307e
+

@@ -1,0 +1,178 @@
+● Build the Angular app (shell)                                                                  14s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng build 2>&1 | Select-Object -Last 60
+  └ 27 lines…
+
+Build succeeded. Now running tests.
+
+✗ Run Angular tests headless (shell)                                                             11s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js 2>&1 | Select-Object -Last 100
+  └ Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.136 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.136 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.136 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.136 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 8 of 15 (3 FAILED) (0 secs / 0.136 secs)
+    ERROR: 'NG0303: Can't bind to 'matTooltipPosition' since it isn't a known property of 'button'
+    (used in the 'DashboardComponent' component template).
+    1. If 'button' is an Angular component and it has the 'matTooltipPosition' input, then verify
+    that it is a part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 9 of 15 (3 FAILED) (0 secs / 0.158 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 10 of 15 (3 FAILED) (0 secs / 0.164 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 11 of 15 (3 FAILED) (0 secs / 0.169 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 12 of 15 (3 FAILED) (0 secs / 0.177 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 13 of 15 (3 FAILED) (0 secs / 0.183 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 14 of 15 (3 FAILED) (0 secs / 0.194 secs)
+    ERROR: 'NG0303: Can't bind to 'routerLink' since it isn't a known property of 'a' (used in the
+    'SidebarComponent' component template).
+    1. If 'a' is an Angular component and it has the 'routerLink' input, then verify that it is a
+    part of an @NgModule where this component is declared.
+    2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.'
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0 secs / 0.207 secs)
+    Chrome Headless 154.0.0.0 (Windows 10): Executed 15 of 15 (3 FAILED) (0.239 secs / 0.207 secs)
+    TOTAL: 3 FAILED, 12 SUCCESS
+    TOTAL: 3 FAILED, 12 SUCCESS
+    ✔ Browser application bundle generation complete.
+    ✔ Browser application bundle generation complete.
+    Failed with exit code 1
+
+● Run only notifications component spec (shell)                                                  19s
+  │ cd C:\Crodox\task-isolation-benchmark\full-repo; npx ng test --watch=false --karma-config
+  │ karma.headless.js --include='**/notifications.component.spec.ts' 2>&1 | Select-Object -Last 40
+  └ 14 lines…
+
+The 3 failures (DashboardComponent/SidebarComponent — `matTooltipPosition`/`routerLink` binding errors) are pre-existing and unrelated to this change. The `notifications.component.spec.ts` test passes (1/1 SUCCESS), and `ng build` compiles cleanly.
+
+**Files changed:**
+- `src\app\notifications\notifications.component.ts`
+
+
+
+Changes    +19 -4
+AI Credits 16.23 (1m 25s)
+Tokens     ↑ 278.6k (239.1k cached, 39.4k written) • ↓ 1.6k (81 reasoning)
+Resume     copilot --resume=67f81e42-4fb3-4891-b355-65ee8a229b8b
+
