@@ -35,9 +35,14 @@ param(
   [string]$ArmB = 'C:\Crodox\armB-full-repo',
   [switch]$NoPolicy,
   [string]$Model = '',
+  [switch]$ResumeCumulative,
   [string]$Date = (Get-Date -Format 'yyyy-MM-dd')
 )
 $ErrorActionPreference = 'Stop'
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+$inv = [System.Globalization.CultureInfo]::InvariantCulture
+function Num($x) { if ($null -eq $x -or $x -eq '') { '' } else { ([double]$x).ToString($inv) } }
 $kit = Join-Path $Bench 'kit'
 $tasks = (Get-Content (Join-Path $kit 'tasks.json') -Raw | ConvertFrom-Json).tasks
 $t = $tasks | Where-Object { $_.id -eq $Task }
@@ -64,15 +69,16 @@ function Invoke-Copilot($repo, $promptFile, $out, $resume) {
     $wall = [int]((Get-Date) - $t0).TotalSeconds
   } finally { Pop-Location }
   $text | Out-File -FilePath $out -Encoding utf8
-  $steps = ([regex]::Matches($text, '(?m)^[\u25CF\u25CB/\\|\-] (Read|Edit|Write|Search|Create|Run|Delete|Execute|List|Bash|Shell)')).Count
-  $m = [regex]::Match($text, 'AI Credits\s+([\d.]+)\s*\((\d+)s\)')
+  # a step line is a status glyph (or spinner frame) followed by the tool title; details follow indented with box characters
+  $steps = ([regex]::Matches($text, '(?m)^[\u25CF\u25CB\u2713\u2714\u2717\u2718/\\|\-] \S[^\r\n]*\r?\n\s+[\u2502\u2514\u251C]')).Count
+  $m = [regex]::Match($text, 'AI Credits\s+([\d.]+)\s*\((?:(\d+)m\s*)?(\d+)s\)')
   $tok = [regex]::Match($text, 'Tokens\s+\S+\s*([\d.]+)k')
   $chg = [regex]::Match($text, 'Changes\s+\+(\d+)\s+-(\d+)')
   $res = [regex]::Match($text, '--resume=([0-9a-f-]+)')
   [pscustomobject]@{
-    credits  = if ($m.Success) { [double]$m.Groups[1].Value } else { $null }
-    seconds  = if ($m.Success) { [int]$m.Groups[2].Value } else { $wall }
-    tokens_k = if ($tok.Success) { [double]$tok.Groups[1].Value } else { $null }
+    credits  = if ($m.Success) { [double]::Parse($m.Groups[1].Value, $inv) } else { $null }
+    seconds  = if ($m.Success) { (if ($m.Groups[2].Success) { 60 * [int]$m.Groups[2].Value } else { 0 }) + [int]$m.Groups[3].Value } else { $wall }
+    tokens_k = if ($tok.Success) { [double]::Parse($tok.Groups[1].Value, $inv) } else { $null }
     added    = if ($chg.Success) { [int]$chg.Groups[1].Value } else { $null }
     removed  = if ($chg.Success) { [int]$chg.Groups[2].Value } else { $null }
     steps    = $steps
@@ -107,7 +113,7 @@ function Evaluate-Object($repo) {
 function Next-RunId {
   $csv = Join-Path $kit 'results\results.csv'
   $ids = (Get-Content $csv | Select-String -Pattern '^R(\d+),' | ForEach-Object { [int]$_.Matches[0].Groups[1].Value })
-  $n = if ($ids) { ($ids | Measure-Object -Maximum).Maximum + 1 } else { 1 }
+  $n = if ($ids) { [int](($ids | Measure-Object -Maximum).Maximum) + 1 } else { 1 }
   'R{0:d3}' -f $n
 }
 
@@ -118,13 +124,13 @@ function Append-Result($arm, $cp, $ev, $verifyCredits, $notes) {
   foreach ($h in $header) { $row[$h] = '' }
   $row['run_id'] = Next-RunId; $row['date'] = $Date; $row['task'] = $Task; $row['arm'] = $arm; $row['repetition'] = ''
   $row['model'] = if ($Model) { "$Model (Copilot CLI)" } else { 'Copilot CLI default model' }
-  $row['credits_turn'] = $cp.credits; $row['credits_session'] = if ($verifyCredits) { [math]::Round($cp.credits + $verifyCredits, 2) } else { $cp.credits }
+  $row['credits_turn'] = Num $cp.credits; $row['credits_session'] = if ($verifyCredits) { Num ([math]::Round($cp.credits + $verifyCredits, 2)) } else { Num $cp.credits }
   $row['context_tokens_session'] = if ($cp.tokens_k) { [int]($cp.tokens_k * 1000) } else { '' }
   $row['tool_calls'] = $cp.steps; $row['duration_s'] = $cp.seconds
   $row['tests_total'] = $ev.tests_total; $row['tests_passed'] = $ev.tests_passed
   $row['files_changed'] = $ev.files_changed; $row['files_in_scope'] = $ev.files_in_scope; $row['build_ok'] = $ev.build_ok
   $row['policy_violations'] = $ev.policy_violations; $row['sbom_components'] = $ev.sbom_components
-  $row['credits_verify'] = if ($verifyCredits) { $verifyCredits } else { '' }
+  $row['credits_verify'] = Num $verifyCredits
   $row['notes'] = ($notes -replace ',', ';')
   $line = ($header | ForEach-Object { $row[$_] }) -join ','
   Add-Content -Path $csv -Value $line
@@ -237,11 +243,15 @@ switch ($Phase) {
     Write-Host ("  {0} credits, {1} s, {2} steps, +{3} -{4}" -f $cpA.credits, $cpA.seconds, $cpA.steps, $cpA.added, $cpA.removed)
     Section 'arm A: copilot, verify prompt (second stage, same session)'
     $cpAv = Invoke-Copilot $repoA $verifyFile (Join-Path $evalDir "$Task-$stamp-A-verify.txt") $cpA.resume
-    Write-Host ("  {0} credits reported for the resumed session, {1} s, {2} steps" -f $cpAv.credits, $cpAv.seconds, $cpAv.steps)
-    # the CLI may report the resumed session cumulatively; keep the smaller interpretation explicit in notes
-    $verifyCredits = if ($cpAv.credits -gt $cpA.credits) { [math]::Round($cpAv.credits - $cpA.credits, 2) } else { $cpAv.credits }
+    if ($null -eq $cpAv.credits) {
+      Write-Host '  resumed session reported no footer; running the verify prompt as a fresh session instead' -ForegroundColor Yellow
+      $cpAv = Invoke-Copilot $repoA $verifyFile (Join-Path $evalDir "$Task-$stamp-A-verify.txt") $null
+    }
+    Write-Host ("  {0} credits reported, {1} s, {2} steps" -f $cpAv.credits, $cpAv.seconds, $cpAv.steps)
+    # -ResumeCumulative: the CLI reports the whole resumed session, so subtract the task turn
+    $verifyCredits = if ($ResumeCumulative -and $cpAv.credits -gt $cpA.credits) { [math]::Round($cpAv.credits - $cpA.credits, 2) } else { $cpAv.credits }
     $evA = Evaluate-Object $repoA
-    Append-Result 'A_full_repo' $cpA $evA $verifyCredits ("copilot cli; two-stage; verify reported {0} (resumed session; stored as {1}); {2}; verify steps {3}" -f $cpAv.credits, $verifyCredits, $evA.test_line, $cpAv.steps)
+    Append-Result 'A_full_repo' $cpA $evA $verifyCredits ("copilot cli; two-stage; verify footer {0} credits {1} s {2} steps (stored as {3}{4}); {5}" -f (Num $cpAv.credits), $cpAv.seconds, $cpAv.steps, (Num $verifyCredits), $(if ($ResumeCumulative) { ' after subtracting the task turn' } else { '' }), $evA.test_line)
 
     # --- arm B ---
     Section 'arm B: copilot'
